@@ -1,0 +1,12 @@
+
+Far Background:
+	1
+	7.x objetos
+	Fixed Object:
+Near Background
+	3 + 4 + 6 [se pueden mezclar para mas variedad]
+Path
+	5
+	8 y 9 Objetos
+Foreground: 11
+Fixed Foreground: 10
