@@ -5,6 +5,7 @@ public class Expedition: MonoBehaviour {
 	public static Expedition i;
 	public int Food;
 	public List<FamilyMember> members;
+	public float Progress;
 
 	void Start () {
 		Expedition.i = this;
@@ -41,6 +42,16 @@ public class Expedition: MonoBehaviour {
 		if (!foundHuman) {
 			World.i.StopTime();
 			GameUI.i.ShowGameOver();
+		}
+	}
+
+	public void TimePassed () {
+		Progress += Time.deltaTime * 1.0f;
+		if (Progress >= 280) {
+			World.i.StopTime();
+			GameUI.i.ShowVictory();
+		} else {
+			GameUI.i.UpdateProgress();
 		}
 	}
 }

@@ -41,6 +41,7 @@ public class World : MonoBehaviour
         if (World.i.stopTime) {
             return;
         }
+        Expedition.i.TimePassed();
         spawnNextCounter -= Time.deltaTime;
         spawnBackgroundCounter -= Time.deltaTime;
         spawnPathCounter -= Time.deltaTime;

@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0915271a36007949a676bdd0eb415ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Food: 220
+  Food: 25
   members:
   - {fileID: 7469537699748902743}
   - {fileID: 5564026657641223390}
@@ -513,6 +513,7 @@ MonoBehaviour:
   - {fileID: 1077704939278337063}
   - {fileID: 4816104205214717010}
   - {fileID: 2989793293641463708}
+  Progress: 0
 --- !u!1 &2052164900101529202
 GameObject:
   m_ObjectHideFlags: 0

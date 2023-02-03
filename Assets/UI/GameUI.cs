@@ -13,6 +13,8 @@ public class GameUI : MonoBehaviour
     public static GameUI i;
 
     public GameObject GameOverPanel;
+    public GameObject VictoryPanel;
+    public Transform ProgressIndicator;
 
     public void ShowEvent (GameEvent gameEvent) {
         EventsDialog.ShowEvent(gameEvent);
@@ -30,9 +32,17 @@ public class GameUI : MonoBehaviour
         GameOverPanel.SetActive(true);
     }
 
+    public void ShowVictory () {
+        VictoryPanel.SetActive(true);
+    }
+
     public void RestartGame () {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+    }
+
+    public void UpdateProgress () {
+        ProgressIndicator.localPosition = new Vector3(0 + Expedition.i.Progress * 5.0f - 700, 0, 0);
     }
 
     void Start() {
