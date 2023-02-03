@@ -19,7 +19,7 @@ public class TradeDialog: MonoBehaviour {
 			new List<InventoryItem> () {
 				new InventoryItem () { itemType = ItemType.BIBLE, quantity = 2 },
 				new InventoryItem () { itemType = ItemType.CRUCIFIX, quantity = 1 },
-				new InventoryItem () { itemType = ItemType.FOOD, quantity = 2 },
+				new InventoryItem () { itemType = ItemType.FOOD, quantity = 10 },
 				new InventoryItem () { itemType = ItemType.MACHETE, quantity = 2 },
 				new InventoryItem () { itemType = ItemType.MATCHES, quantity = 2 },
 				new InventoryItem () { itemType = ItemType.MIRROR, quantity = 1 },
