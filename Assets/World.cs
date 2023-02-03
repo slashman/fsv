@@ -11,9 +11,13 @@ public class World : MonoBehaviour
     private float spawnNextCounter;
     public bool stopTime;
 
+    public System.DateTime currentTime;
+
     void Start () {
         World.i = this;
         spawnNextCounter = Random.Range(0, 3);
+        currentTime = new System.DateTime(1952, 04, 12);
+        GameUI.i.UpdateDate(currentTime);
     }
 
     public static World i;
@@ -25,6 +29,11 @@ public class World : MonoBehaviour
             return;
         }
         spawnNextCounter -= Time.deltaTime;
+        int currentDay = currentTime.Day;
+        currentTime = currentTime.AddHours(2 * Time.deltaTime);
+        if (currentTime.Day != currentDay) {
+            GameUI.i.UpdateDate(currentTime);
+        }
         if (spawnNextCounter < 0) {
             int dice = Random.Range(1, 5);
             GameObject prefab = null;
