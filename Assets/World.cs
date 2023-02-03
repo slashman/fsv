@@ -77,8 +77,8 @@ public class World : MonoBehaviour
             } else {
                 prefab = HousePrefab;
             }
-            Instantiate(prefab, new Vector3(11, -1.18f, 0), Quaternion.identity, transform);
-            spawnNextCounter = Random.Range(5, 10);
+            Instantiate(prefab, new Vector3(11, -1.18f, 1.9f), Quaternion.identity, transform);
+            spawnNextCounter = Random.Range(20, 30);
         }
     }
 
