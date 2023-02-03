@@ -7,6 +7,7 @@ using TMPro;
 public class GameUI : MonoBehaviour
 {
     public EventsDialog EventsDialog;
+    public InventoryDialog InventoryDialog;
     public TMP_Text DateText;
     public TMP_Text FoodText;
 
@@ -25,7 +26,7 @@ public class GameUI : MonoBehaviour
     }
 
     public void UpdateStatus () {
-        FoodText.text = Expedition.i.Food.ToString();
+        FoodText.text = Expedition.i.GetTotalFood().ToString();
     }
 
     public void ShowGameOver () {
@@ -43,6 +44,11 @@ public class GameUI : MonoBehaviour
 
     public void UpdateProgress () {
         ProgressIndicator.localPosition = new Vector3(0 + Expedition.i.Progress * 5.0f - 700, 0, 0);
+    }
+
+    public void ShowInventory () {
+        World.i.StopTime();
+        InventoryDialog.Show();
     }
 
     void Start() {

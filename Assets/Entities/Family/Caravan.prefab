@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 6
+  BaseCarryCapacity: 1
   statusBox: {fileID: 0}
   isHuman: 1
 --- !u!1 &60335427261180303
@@ -198,6 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 12
+  BaseCarryCapacity: 3
   statusBox: {fileID: 0}
   isHuman: 1
 --- !u!1 &196397815652830457
@@ -298,6 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 15
+  BaseCarryCapacity: 4
   statusBox: {fileID: 0}
   isHuman: 1
 --- !u!1 &199650903343080811
@@ -398,6 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 20
+  BaseCarryCapacity: 7
   statusBox: {fileID: 0}
   isHuman: 0
 --- !u!1 &738742825020000199
@@ -612,6 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 20
+  BaseCarryCapacity: 2
   statusBox: {fileID: 0}
   isHuman: 1
 --- !u!1 &4956228974819559832
@@ -712,6 +717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 15
+  BaseCarryCapacity: 4
   statusBox: {fileID: 0}
   isHuman: 1
 --- !u!1 &5046902025398296152
@@ -812,5 +818,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 15
+  BaseCarryCapacity: 0
   statusBox: {fileID: 0}
   isHuman: 0
