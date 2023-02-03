@@ -8,6 +8,7 @@ public class GameUI : MonoBehaviour
 {
     public EventsDialog EventsDialog;
     public InventoryDialog InventoryDialog;
+    public TradeDialog TransferDialog;
     public TMP_Text DateText;
     public TMP_Text FoodText;
 
@@ -49,6 +50,11 @@ public class GameUI : MonoBehaviour
     public void ShowInventory () {
         World.i.StopTime();
         InventoryDialog.Show();
+    }
+
+    public void ShowTransfer (string id) {
+        World.i.StopTime();
+        TransferDialog.Show(id);
     }
 
     void Start() {

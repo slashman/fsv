@@ -10,6 +10,10 @@ public class World : MonoBehaviour
     public GameObject HousePrefab;
     public GameObject MilitiaPrefab;
 
+    public GameObject FincaPrefab;
+    public GameObject DabeibaPrefab;
+    public GameObject UramitaPrefab;
+
     private float spawnForegroundCounter;
     private float spawnBackgroundCounter;
     private float spawnPathCounter;
@@ -36,6 +40,9 @@ public class World : MonoBehaviour
     public static World i;
 
     private bool militiaGenerated;
+    private bool fincaGenerated;
+    private bool dabeibaGenerated;
+    private bool uramitaGenerated;
 
     void Update () {
         if (World.i.stopTime) {
@@ -64,19 +71,29 @@ public class World : MonoBehaviour
             Instantiate(ForegroundPrefabs[Random.Range(0, ForegroundPrefabs.Length)], new Vector3(15, 0, 0), Quaternion.identity, transform);
             spawnForegroundCounter = Random.Range(9, 15);
         }
-        if (spawnNextCounter < 0) {
-            int dice = Random.Range(1, 5);
-            GameObject prefab = null;
-            if (dice == 1) {
-                if (militiaGenerated) {
-                    prefab = HousePrefab;
-                } else {
-                    prefab = MilitiaPrefab;
-                    militiaGenerated = true;
-                }
-            } else {
-                prefab = HousePrefab;
-            }
+        GameObject plotPrefab = null;
+        // Check based on progress
+        float progress = Expedition.i.Progress;
+        // 280 victory
+        if (progress < 10 && !fincaGenerated) {
+            plotPrefab = FincaPrefab;
+            fincaGenerated = true;
+        } else if (progress > 50 && progress < 70 && !dabeibaGenerated) {
+            plotPrefab = DabeibaPrefab;
+            dabeibaGenerated = true;
+        } else if (progress > 100 && progress < 120 && !militiaGenerated) {
+            plotPrefab = MilitiaPrefab;
+            militiaGenerated = true;
+        } else if (progress > 160 && progress < 180 && !uramitaGenerated) {
+            plotPrefab = UramitaPrefab;
+            uramitaGenerated = true;
+        }
+        if (plotPrefab != null) {
+            Instantiate(plotPrefab, new Vector3(21, -1.18f, 1.9f), Quaternion.identity, transform);
+        }
+        if (spawnNextCounter < 0 && plotPrefab == null && false) {
+            // int dice = Random.Range(1, 5);
+            GameObject prefab = HousePrefab;
             Instantiate(prefab, new Vector3(11, -1.18f, 1.9f), Quaternion.identity, transform);
             spawnNextCounter = Random.Range(20, 30);
         }

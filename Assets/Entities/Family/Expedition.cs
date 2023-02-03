@@ -6,6 +6,7 @@ public class Expedition: MonoBehaviour {
 	public List<FamilyMember> members;
 	public List<InventoryItem> inventory;
 	public float Progress;
+	public int money;
 
 	void Start () {
 		Expedition.i = this;

@@ -13,14 +13,18 @@ public class ScrollingObject : MonoBehaviour
             return;
         }
         transform.Translate(-Speed * Time.deltaTime, 0, 0);
-        if (transform.position.x <= -20) {
+        if (transform.position.x <= -60) {
             Destroy(gameObject);
             return;
         }
         if (!Triggered && TriggerEventId != null && TriggerEventId != "" && transform.position.x <= -5.5f) {
             Triggered = true;
-            GameUI.i.ShowEvent(GameEvents.Get(TriggerEventId));
-            World.i.StopTime();
+            if (TriggerEventId == "finca" || TriggerEventId == "uramita" || TriggerEventId == "dabeiba") {
+                GameUI.i.ShowTransfer(TriggerEventId);
+            } else {
+                GameUI.i.ShowEvent(GameEvents.Get(TriggerEventId));
+                World.i.StopTime();
+            }
         }
     }
 }

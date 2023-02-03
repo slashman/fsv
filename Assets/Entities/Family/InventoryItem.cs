@@ -22,6 +22,28 @@ public class InventoryItem {
 	public string name;
 	public int quantity;
 
+	public int GetPrice () {
+		switch (itemType) {
+			case ItemType.FOOD: return 4;
+			case ItemType.MEDICINE: return 20;
+			case ItemType.BANDAGES: return 15;
+			case ItemType.MACHETE: return 20;
+			case ItemType.CRUCIFIX: return 30;
+			case ItemType.PAINTING: return 15;
+			case ItemType.BIBLE: return 20;
+			case ItemType.CLOCK: return 20;
+			case ItemType.JEWELS: return 10;
+			case ItemType.MIRROR: return 10;
+			case ItemType.SHOES: return 10;
+			case ItemType.RUANA: return 10;
+			case ItemType.POTS: return 15;
+			case ItemType.WOODEN_TOY: return 5;
+			case ItemType.SAINT: return 10;
+			case ItemType.MATCHES: return 5;
+		}
+		return 0;
+	}
+
 	public string GetName () {
 		switch (itemType) {
 			case ItemType.FOOD: return "Yuca (Cassava)";
