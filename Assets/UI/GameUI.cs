@@ -14,6 +14,7 @@ public class GameUI : MonoBehaviour
 
     public static GameUI i;
 
+    public GameObject TitlePanel;
     public GameObject GameOverPanel;
     public GameObject VictoryPanel;
     public Transform ProgressIndicator;
@@ -55,6 +56,10 @@ public class GameUI : MonoBehaviour
     public void ShowTransfer (string id) {
         World.i.StopTime();
         TransferDialog.Show(id);
+    }
+
+    public void StartGame () {
+        TitlePanel.SetActive(false);
     }
 
     void Start() {
