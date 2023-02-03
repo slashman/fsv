@@ -89,7 +89,7 @@ public class World : MonoBehaviour
             uramitaGenerated = true;
         }
         if (plotPrefab != null) {
-            Instantiate(plotPrefab, new Vector3(21, -1.18f, 1.9f), Quaternion.identity, transform);
+            Instantiate(plotPrefab, new Vector3(10, -1.18f, 1.9f), Quaternion.identity, transform);
         }
         if (spawnNextCounter < 0 && plotPrefab == null && false) {
             // int dice = Random.Range(1, 5);
