@@ -23,6 +23,7 @@ public class World : MonoBehaviour
         spawnNextCounter = Random.Range(0, 3);
         currentTime = new System.DateTime(1952, 04, 12);
         GameUI.i.UpdateDate(currentTime);
+        GameUI.i.UpdateStatus();
 
         for (int i = 0; i < 5; i++) {
             Instantiate(BackgroundPrefabs[Random.Range(0, BackgroundPrefabs.Length)], new Vector3(Random.Range(-8.0f, 8.0f), Random.Range(2.0f, 5.0f), 5.4f), Quaternion.identity, transform);
@@ -48,6 +49,7 @@ public class World : MonoBehaviour
         currentTime = currentTime.AddHours(2 * Time.deltaTime);
         if (currentTime.Day != currentDay) {
             GameUI.i.UpdateDate(currentTime);
+            Expedition.i.ConsumeFood();
         }
         if (spawnBackgroundCounter < 0) {
             Instantiate(BackgroundPrefabs[Random.Range(0, BackgroundPrefabs.Length)], new Vector3(15, Random.Range(2.0f, 5.0f), 5.4f), Quaternion.identity, transform);

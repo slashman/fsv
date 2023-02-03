@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7900719464002714517}
   - component: {fileID: 4488630642170174723}
+  - component: {fileID: 2989793293641463708}
   m_Layer: 0
   m_Name: Clara
   m_TagString: Untagged
@@ -84,6 +85,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2989793293641463708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55149848886548938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73be424f16d1f54599b5b30ddd5a487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 6
+  statusBox: {fileID: 0}
+  isHuman: 1
 --- !u!1 &60335427261180303
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4410765122447297156}
   - component: {fileID: 5013947822088871318}
+  - component: {fileID: 5564026657641223390}
   m_Layer: 0
   m_Name: Maria
   m_TagString: Untagged
@@ -168,6 +185,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5564026657641223390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60335427261180303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73be424f16d1f54599b5b30ddd5a487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 12
+  statusBox: {fileID: 0}
+  isHuman: 1
 --- !u!1 &196397815652830457
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7826388374653023863}
   - component: {fileID: 1076491199681344425}
+  - component: {fileID: 6028059746459738728}
   m_Layer: 0
   m_Name: manuel
   m_TagString: Untagged
@@ -252,6 +285,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6028059746459738728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196397815652830457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73be424f16d1f54599b5b30ddd5a487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 15
+  statusBox: {fileID: 0}
+  isHuman: 1
 --- !u!1 &199650903343080811
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8155913188499947924}
   - component: {fileID: 7777974151202728111}
+  - component: {fileID: 7469537699748902743}
   m_Layer: 0
   m_Name: rosita
   m_TagString: Untagged
@@ -336,6 +385,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7469537699748902743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199650903343080811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73be424f16d1f54599b5b30ddd5a487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 20
+  statusBox: {fileID: 0}
+  isHuman: 0
 --- !u!1 &738742825020000199
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,6 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 738742825020000198}
   - component: {fileID: 738742825020000217}
+  - component: {fileID: 8017177143230216631}
   m_Layer: 0
   m_Name: Caravan
   m_TagString: Untagged
@@ -427,6 +492,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8017177143230216631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738742825020000199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0915271a36007949a676bdd0eb415ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Food: 220
+  members:
+  - {fileID: 7469537699748902743}
+  - {fileID: 5564026657641223390}
+  - {fileID: 4512051034868201822}
+  - {fileID: 6028059746459738728}
+  - {fileID: 1077704939278337063}
+  - {fileID: 4816104205214717010}
+  - {fileID: 2989793293641463708}
 --- !u!1 &2052164900101529202
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,6 +523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2467059391106429474}
   - component: {fileID: 4325936137083758082}
+  - component: {fileID: 4512051034868201822}
   m_Layer: 0
   m_Name: Esperanza
   m_TagString: Untagged
@@ -511,6 +598,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4512051034868201822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052164900101529202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73be424f16d1f54599b5b30ddd5a487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 20
+  statusBox: {fileID: 0}
+  isHuman: 1
 --- !u!1 &4956228974819559832
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,6 +623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7970209106119006681}
   - component: {fileID: 4575048785604938335}
+  - component: {fileID: 1077704939278337063}
   m_Layer: 0
   m_Name: Tiberioo
   m_TagString: Untagged
@@ -595,6 +698,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1077704939278337063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4956228974819559832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73be424f16d1f54599b5b30ddd5a487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 15
+  statusBox: {fileID: 0}
+  isHuman: 1
 --- !u!1 &5046902025398296152
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,6 +723,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7140606425310391718}
   - component: {fileID: 177886292822546156}
+  - component: {fileID: 4816104205214717010}
   m_Layer: 0
   m_Name: Avispao
   m_TagString: Untagged
@@ -679,3 +798,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4816104205214717010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5046902025398296152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73be424f16d1f54599b5b30ddd5a487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 15
+  statusBox: {fileID: 0}
+  isHuman: 0
