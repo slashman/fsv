@@ -45,7 +45,7 @@ public class TransferRow: MonoBehaviour {
 			targetInventory.Add(new InventoryItem() { itemType = item.itemType, quantity = 1 });
 		}
 		this.item.quantity--;
-		if (this.sellMode) {
+		if (this.sellMode && !freeTransfer) {
 			Expedition.i.money += this.item.GetPrice();
 		}
 		parent.UpdateInventories();
