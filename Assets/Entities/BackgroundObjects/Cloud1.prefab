@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3923510094379659269
+--- !u!1 &6431729061585467758
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1822277475477378887}
-  - component: {fileID: 2740110351378147205}
+  - component: {fileID: 4420241373523796500}
+  - component: {fileID: 6010336007588889355}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Cloud1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1822277475477378887
+--- !u!4 &4420241373523796500
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3923510094379659269}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: -0.348, z: 3}
-  m_LocalScale: {x: 0.17, y: 0.17, z: 1}
+  m_GameObject: {fileID: 6431729061585467758}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7315035537858138646}
+  m_Father: {fileID: 4553209204277766440}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2740110351378147205
+--- !u!212 &6010336007588889355
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3923510094379659269}
+  m_GameObject: {fileID: 6431729061585467758}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,18 +73,18 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 979940d8c0b537549b32eeae6b00a43f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 01c845935ce3a914e842eb208c6c4c4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6.32, y: 1.57}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1434203525948126832
+--- !u!1001 &5283660482742799694
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -93,12 +93,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 898888551606861311, guid: e37f5304ebd3945439490a2046f33385, type: 3}
       propertyPath: m_Name
-      value: Milicianos
+      value: Cloud1
       objectReference: {fileID: 0}
-    - target: {fileID: 8496399330959512491, guid: e37f5304ebd3945439490a2046f33385, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 979940d8c0b537549b32eeae6b00a43f, type: 3}
     - target: {fileID: 8530779297464755302, guid: e37f5304ebd3945439490a2046f33385, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -145,16 +141,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8954635173100080717, guid: e37f5304ebd3945439490a2046f33385, type: 3}
       propertyPath: Speed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8954635173100080717, guid: e37f5304ebd3945439490a2046f33385, type: 3}
-      propertyPath: TriggerEventId
-      value: militia
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e37f5304ebd3945439490a2046f33385, type: 3}
---- !u!4 &7315035537858138646 stripped
+--- !u!4 &4553209204277766440 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8530779297464755302, guid: e37f5304ebd3945439490a2046f33385, type: 3}
-  m_PrefabInstance: {fileID: 1434203525948126832}
+  m_PrefabInstance: {fileID: 5283660482742799694}
   m_PrefabAsset: {fileID: 0}

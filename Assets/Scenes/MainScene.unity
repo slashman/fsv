@@ -1973,7 +1973,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c60d8377785fd4b8f19aeee4a4a562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TreePrefab: {fileID: 1673231238111175740, guid: 5868c260c0fc2154e867092f172604dd, type: 3}
+  BackgroundPrefabs:
+  - {fileID: 4983843590310883505, guid: e5a8e3fadd14da64d9c737081b59a998, type: 3}
+  - {fileID: 4983843590310883505, guid: 361e08807dade98459759eea601f574f, type: 3}
+  - {fileID: 4983843590310883505, guid: a372133babbfef84ebd5742331859a43, type: 3}
+  - {fileID: 4983843590310883505, guid: 75b6bc684d348284ba40c880a09f0c6a, type: 3}
+  - {fileID: 4983843590310883505, guid: 5cdb0dca7c61fd0438954cdf664c1e0f, type: 3}
+  - {fileID: 4983843590310883505, guid: f08f2f0e63af01148a4bd7f02f9e7faa, type: 3}
+  - {fileID: 4983843590310883505, guid: b12965f5de1e18943a97e4d79a2bb5ab, type: 3}
+  - {fileID: 4983843590310883505, guid: 203e1853771f138499d79463ac788f79, type: 3}
+  PathPrefabs:
+  - {fileID: 1673231238111175740, guid: 743fcf5268e3f4647be32c5b0c4098e3, type: 3}
+  - {fileID: 1673231238111175740, guid: 69e2d5cc75f3a4240b70b85d3905f8e3, type: 3}
+  - {fileID: 1673231238111175740, guid: 04833f86a3cae874d980a54fca286559, type: 3}
+  - {fileID: 1673231238111175740, guid: 23f364873cfa9164283bf32d139ee021, type: 3}
+  - {fileID: 1673231238111175740, guid: 5868c260c0fc2154e867092f172604dd, type: 3}
+  - {fileID: 1673231238111175740, guid: 3b19947255c592a4ca6320aab27bcbae, type: 3}
+  - {fileID: 1673231238111175740, guid: d221b9d0e7797344c8aada9465001cb6, type: 3}
+  ForegroundPrefabs: []
   HousePrefab: {fileID: 979945533384576589, guid: 778e3e5cc933da843a8f7e51ecd881c8, type: 3}
   MilitiaPrefab: {fileID: 2278310010111986575, guid: 7785e6fd924a0ed44b5e883e6c1d521c, type: 3}
   stopTime: 0

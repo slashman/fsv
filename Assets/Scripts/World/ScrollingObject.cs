@@ -5,14 +5,14 @@ using UnityEngine;
 public class ScrollingObject : MonoBehaviour
 {
     public string TriggerEventId;
-    public float VerticalOffset;
+    public float Speed;
     private bool Triggered;
 
     void Update() {
         if (World.i.stopTime) {
             return;
         }
-        transform.Translate(-1 * Time.deltaTime, 0, 0);
+        transform.Translate(-Speed * Time.deltaTime, 0, 0);
         if (transform.position.x <= -20) {
             Destroy(gameObject);
             return;
