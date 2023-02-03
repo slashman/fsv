@@ -36,12 +36,12 @@ public class World : MonoBehaviour
         for (int i = 0; i < 4; i++) {
             Instantiate(PathPrefabs[Random.Range(0, PathPrefabs.Length)], new Vector3(Random.Range(-8.0f, 8.0f), Random.Range(-1.9f, -1.2f), 2f), Quaternion.identity, transform);
         }
+        Instantiate(FincaPrefab, new Vector3(0, -1.18f, 1.9f), Quaternion.identity, transform);
     }
 
     public static World i;
 
     private bool militiaGenerated;
-    private bool fincaGenerated;
     private bool dabeibaGenerated;
     private bool uramitaGenerated;
 
@@ -76,10 +76,7 @@ public class World : MonoBehaviour
         // Check based on progress
         float progress = Expedition.i.Progress;
         // 280 victory
-        if (progress < 10 && !fincaGenerated) {
-            plotPrefab = FincaPrefab;
-            fincaGenerated = true;
-        } else if (progress > 50 && progress < 70 && !dabeibaGenerated) {
+        if (progress > 50 && progress < 70 && !dabeibaGenerated) {
             plotPrefab = DabeibaPrefab;
             dabeibaGenerated = true;
         } else if (progress > 100 && progress < 120 && !militiaGenerated) {
