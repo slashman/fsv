@@ -60,6 +60,7 @@ public class GameUI : MonoBehaviour
 
     public void StartGame () {
         TitlePanel.SetActive(false);
+        World.i.ResumeTime();
     }
 
     void Start() {

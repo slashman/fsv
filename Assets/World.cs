@@ -24,6 +24,7 @@ public class World : MonoBehaviour
 
     void Start () {
         World.i = this;
+        stopTime = true;
         spawnNextCounter = Random.Range(0, 3);
         currentTime = new System.DateTime(1952, 04, 12);
         GameUI.i.UpdateDate(currentTime);
