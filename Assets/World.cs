@@ -57,6 +57,10 @@ public class World : MonoBehaviour
             Instantiate(PathPrefabs[Random.Range(0, PathPrefabs.Length)], new Vector3(15, Random.Range(-1.9f, -1.2f), 2f), Quaternion.identity, transform);
             spawnPathCounter = Random.Range(3, 5);
         }
+        if (spawnForegroundCounter < 0) {
+            Instantiate(ForegroundPrefabs[Random.Range(0, ForegroundPrefabs.Length)], new Vector3(15, 0, 0), Quaternion.identity, transform);
+            spawnForegroundCounter = Random.Range(9, 15);
+        }
         if (spawnNextCounter < 0) {
             int dice = Random.Range(1, 5);
             GameObject prefab = null;
