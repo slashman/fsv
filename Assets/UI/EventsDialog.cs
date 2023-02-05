@@ -8,9 +8,13 @@ public class EventsDialog : MonoBehaviour {
     public TMP_Text PromptText;
     public GameObject[] Buttons;
 
+    public AudioClip eventSFX;
+    public AudioClip selectSFX;
+
     private GameEvent currentEvent;
 
     public void ShowEvent(GameEvent e) {
+        GetComponent<AudioSource>().PlayOneShot(eventSFX);
         currentEvent = e;
         RootPanel.SetActive(true);
         foreach (GameObject button in Buttons) {
@@ -29,5 +33,6 @@ public class EventsDialog : MonoBehaviour {
 
     public void OptionSelected (int index) {
         GameEvents.OptionSelected(currentEvent, currentEvent.options[index]);
+        GetComponent<AudioSource>().PlayOneShot(selectSFX);
     }
 }

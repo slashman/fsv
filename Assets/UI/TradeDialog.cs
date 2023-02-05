@@ -10,8 +10,12 @@ public class TradeDialog: MonoBehaviour {
 	public TMP_Text capacityText;
 	public TMP_Text moneyText;
 	public TMP_Text targetNameText;
+	public AudioClip openDoorSFX;
+	public AudioClip closeDoorSFX;
 
 	private bool freeTransfer;
+
+	private string currentID;
 
 	public static Dictionary<string, List<InventoryItem>> INVENTORIES = new Dictionary<string, List<InventoryItem>> () {
 		{
@@ -66,9 +70,15 @@ public class TradeDialog: MonoBehaviour {
 	}
 
 	public void Show (string targetInventoryId) {
+		currentID = targetInventoryId;
 		this.targetInventory = INVENTORIES[targetInventoryId];
 		targetNameText.text = getInventoryName(targetInventoryId);
 		freeTransfer = targetInventoryId == "finca";
+		if (currentID == "finca" || currentID == "dabeiba" || currentID == "uramita") {
+			GetComponent<AudioSource>().PlayOneShot(openDoorSFX);	
+			World.i.PauseBGSFX();
+		}
+		
 		UpdateInventories();
 		panel.SetActive(true);
 	}
@@ -97,5 +107,10 @@ public class TradeDialog: MonoBehaviour {
 	public void Hide () {
 		World.i.ResumeTime();
 		panel.SetActive(false);
+		if (currentID == "finca" || currentID == "dabeiba" || currentID == "uramita") {
+			GetComponent<AudioSource>().PlayOneShot(closeDoorSFX);
+			World.i.UnPauseBGSFX();	
+		}
+		
 	}
 }

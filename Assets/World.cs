@@ -8,6 +8,8 @@ public class World : MonoBehaviour
     public GameObject[] PathPrefabs;
     public GameObject[] ForegroundPrefabs;
     public GameObject HousePrefab;
+    public GameObject BurningHousePrefab;
+    public GameObject River;
     public GameObject MilitiaPrefab;
 
     public GameObject FincaPrefab;
@@ -42,8 +44,10 @@ public class World : MonoBehaviour
     public static World i;
 
     private bool militiaGenerated;
+    private bool burningHouseGenerated;
     private bool dabeibaGenerated;
     private bool uramitaGenerated;
+    private bool riverGenerated;
 
     void Update () {
         if (World.i.stopTime) {
@@ -76,6 +80,15 @@ public class World : MonoBehaviour
         // Check based on progress
         float progress = Expedition.i.Progress;
         // 280 victory
+        if (progress > 20 && progress < 49 && !burningHouseGenerated) {
+            plotPrefab = BurningHousePrefab;
+            burningHouseGenerated = true;
+        } else if (progress > 105 && progress < 135 && !riverGenerated) {
+            plotPrefab = River;
+            riverGenerated = true;
+        }
+
+
         if (progress > 50 && progress < 70 && !dabeibaGenerated) {
             plotPrefab = DabeibaPrefab;
             dabeibaGenerated = true;
@@ -95,6 +108,17 @@ public class World : MonoBehaviour
             Instantiate(prefab, new Vector3(11, -1.18f, 1.9f), Quaternion.identity, transform);
             spawnNextCounter = Random.Range(20, 30);
         }
+    }
+
+    public void StartBGSFX() {
+        this.GetComponent<AudioSource>().Play();
+    }
+    public void PauseBGSFX() {
+        this.GetComponent<AudioSource>().Pause();
+    }
+
+     public void UnPauseBGSFX() {
+        this.GetComponent<AudioSource>().UnPause();
     }
 
     public void StopTime () {

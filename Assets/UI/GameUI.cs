@@ -61,6 +61,8 @@ public class GameUI : MonoBehaviour
     public void StartGame () {
         TitlePanel.SetActive(false);
         World.i.ResumeTime();
+        World.i.StartBGSFX();
+        
     }
 
     void Start() {
