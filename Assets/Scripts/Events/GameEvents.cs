@@ -47,8 +47,8 @@ public static class GameEvents {
 		},
 		new GameEvent() { id = "house", prompt = "Your family aproaches what seems like an abandoned house." +
 			"\nProbably another family displaced by violence." +
-			"\nNo aid will be found here.", options = new GameEventOption[] {
-			new GameEventOption() { description = "Keep walking" }
+			"\n You may spend some time searching for food.", options = new GameEventOption[] {
+			new GameEventOption() { description = "Let's take the risk" }
 		}}
 	};
 
