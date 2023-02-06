@@ -15,6 +15,8 @@ public class GameUI : MonoBehaviour
     public static GameUI i;
 
     public GameObject TitlePanel;
+    public GameObject GameHUD;
+    public GameObject Main2DScene;
     public GameObject GameOverPanel;
     public GameObject VictoryPanel;
     public Transform ProgressIndicator;
@@ -60,12 +62,12 @@ public class GameUI : MonoBehaviour
 
     public void StartGame () {
         TitlePanel.SetActive(false);
-        World.i.ResumeTime();
-        World.i.StartBGSFX();
-        
+        GameHUD.SetActive(true);
+        Main2DScene.SetActive(true);
     }
 
     void Start() {
         GameUI.i = this;
+        TitlePanel.SetActive(true);
     }
 }

@@ -24,8 +24,11 @@ public class World : MonoBehaviour
 
     public System.DateTime currentTime;
 
-    void Start () {
+    void Awake () {
         World.i = this;
+    }
+
+    void Start () {
         stopTime = true;
         spawnNextCounter = Random.Range(0, 3);
         currentTime = new System.DateTime(1952, 04, 12);
@@ -39,6 +42,8 @@ public class World : MonoBehaviour
             Instantiate(PathPrefabs[Random.Range(0, PathPrefabs.Length)], new Vector3(Random.Range(-8.0f, 8.0f), Random.Range(-1.9f, -1.2f), 2f), Quaternion.identity, transform);
         }
         Instantiate(FincaPrefab, new Vector3(0, -1.18f, 1.9f), Quaternion.identity, transform);
+
+        StartBGSFX();
     }
 
     public static World i;
@@ -130,10 +135,12 @@ public class World : MonoBehaviour
     }
 
     public void StopTime () {
+        GameHUD.i.MovementUI.SetActive(false);
         stopTime = true;
     }
 
     public void ResumeTime () {
+        GameHUD.i.MovementUI.SetActive(true);
         stopTime = false;
     }
 }

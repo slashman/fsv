@@ -8,7 +8,7 @@ public class Expedition: MonoBehaviour {
 	public float Progress;
 	public int money;
 
-	void Start () {
+	void Awake () {
 		Expedition.i = this;
 		Expedition.i.inventory = new List<InventoryItem>() {
 			new InventoryItem() { itemType = ItemType.FOOD, quantity = 10 },
