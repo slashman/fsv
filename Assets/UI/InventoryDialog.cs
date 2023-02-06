@@ -7,6 +7,8 @@ public class InventoryDialog: MonoBehaviour {
 	public Transform rowsContainer;
 	public TMP_Text capacityText;
 	public TMP_Text moneyText;
+	public AudioClip openSFX;
+	public AudioClip closeSFX;
 
 	public void Show () {
 		foreach (Transform row in rowsContainer) {
@@ -18,11 +20,15 @@ public class InventoryDialog: MonoBehaviour {
 		}
 		capacityText.text = "Carrying " + Expedition.i.GetBurden() + "/" + Expedition.i.GetCarryCapacity();
 		moneyText.text = "Money " + Expedition.i.money + " pesos";
-		panel.SetActive(true);
+		if (panel.activeInHierarchy == false)
+		{	GetComponent<AudioSource>().PlayOneShot(openSFX);
+			panel.SetActive(true);
+		}
 	}
 
 	public void Hide () {
 		World.i.ResumeTime();
 		panel.SetActive(false);
+		GetComponent<AudioSource>().PlayOneShot(closeSFX);
 	}
 }

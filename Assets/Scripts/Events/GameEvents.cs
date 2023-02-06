@@ -6,6 +6,9 @@ public static class GameEvents {
 		new GameEvent() { id = "militia", prompt = "Un grupo armado te detiene, su lider pregunta:\n“Qué tenemos aquí? Reconozco chulavitas con solo verlos!“", options = new GameEventOption[] {
 			new GameEventOption() { description = "No somos chulavitas! Por favor déjame pasar con mi familia!" }
 		}},
+		new GameEvent() { id = "casaquemada", prompt = "La casa de los Zapata... seguro ya paso por aquí esa terrible gente“", options = new GameEventOption[] {
+			new GameEventOption() { description = "No miren pa' allá mijitos, sigamos andando" }
+		}},
 		new GameEvent() {
 			id = "stolenAnimal",
 			prompt = "After a good night’s sleep, you notice XXX is missing. After spending several hours looking for it, you decide it’s time to move on.",

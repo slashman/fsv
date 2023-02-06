@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7900719464002714517}
   - component: {fileID: 4488630642170174723}
   - component: {fileID: 2989793293641463708}
+  - component: {fileID: 1286744084505097118}
   m_Layer: 0
   m_Name: Clara
   m_TagString: Untagged
@@ -101,6 +102,26 @@ MonoBehaviour:
   BaseCarryCapacity: 1
   statusBox: {fileID: 0}
   isHuman: 1
+--- !u!95 &1286744084505097118
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55149848886548938}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cdf75ff9885b3e042adbb11d60484125, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &60335427261180303
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +133,7 @@ GameObject:
   - component: {fileID: 4410765122447297156}
   - component: {fileID: 5013947822088871318}
   - component: {fileID: 5564026657641223390}
+  - component: {fileID: 3933269739329295413}
   m_Layer: 0
   m_Name: Maria
   m_TagString: Untagged
@@ -202,6 +224,26 @@ MonoBehaviour:
   BaseCarryCapacity: 3
   statusBox: {fileID: 0}
   isHuman: 1
+--- !u!95 &3933269739329295413
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60335427261180303}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fcefbe3a0b383a54f9951ccd0ffdf7aa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &196397815652830457
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +255,7 @@ GameObject:
   - component: {fileID: 7826388374653023863}
   - component: {fileID: 1076491199681344425}
   - component: {fileID: 6028059746459738728}
+  - component: {fileID: 7591713394027949421}
   m_Layer: 0
   m_Name: manuel
   m_TagString: Untagged
@@ -303,6 +346,26 @@ MonoBehaviour:
   BaseCarryCapacity: 4
   statusBox: {fileID: 0}
   isHuman: 1
+--- !u!95 &7591713394027949421
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196397815652830457}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a27f09e671946cd4a91703ae66a06b59, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &199650903343080811
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +377,7 @@ GameObject:
   - component: {fileID: 8155913188499947924}
   - component: {fileID: 7777974151202728111}
   - component: {fileID: 7469537699748902743}
+  - component: {fileID: 2034105814741076485}
   m_Layer: 0
   m_Name: rosita
   m_TagString: Untagged
@@ -404,6 +468,26 @@ MonoBehaviour:
   BaseCarryCapacity: 7
   statusBox: {fileID: 0}
   isHuman: 0
+--- !u!95 &2034105814741076485
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199650903343080811}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e705356ba7c7b1408edb9cbacfe2910, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &738742825020000199
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,6 +613,7 @@ GameObject:
   - component: {fileID: 2467059391106429474}
   - component: {fileID: 4325936137083758082}
   - component: {fileID: 4512051034868201822}
+  - component: {fileID: 1991882395341743399}
   m_Layer: 0
   m_Name: Esperanza
   m_TagString: Untagged
@@ -619,6 +704,26 @@ MonoBehaviour:
   BaseCarryCapacity: 2
   statusBox: {fileID: 0}
   isHuman: 1
+--- !u!95 &1991882395341743399
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052164900101529202}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 146b4c90de61d044da02e61ee31c2fef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4956228974819559832
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,6 +735,7 @@ GameObject:
   - component: {fileID: 7970209106119006681}
   - component: {fileID: 4575048785604938335}
   - component: {fileID: 1077704939278337063}
+  - component: {fileID: 464681234696723256}
   m_Layer: 0
   m_Name: Tiberioo
   m_TagString: Untagged
@@ -720,6 +826,26 @@ MonoBehaviour:
   BaseCarryCapacity: 4
   statusBox: {fileID: 0}
   isHuman: 1
+--- !u!95 &464681234696723256
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4956228974819559832}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 42abfa601bdd65e4d8bf2eb648ac5798, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5046902025398296152
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +857,9 @@ GameObject:
   - component: {fileID: 7140606425310391718}
   - component: {fileID: 177886292822546156}
   - component: {fileID: 4816104205214717010}
+  - component: {fileID: 1623875026994444391}
+  - component: {fileID: 4825017251262915443}
+  - component: {fileID: 3304672392725688763}
   m_Layer: 0
   m_Name: Avispao
   m_TagString: Untagged
@@ -821,3 +950,139 @@ MonoBehaviour:
   BaseCarryCapacity: 0
   statusBox: {fileID: 0}
   isHuman: 0
+--- !u!114 &1623875026994444391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5046902025398296152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e915ba757c6d14dbb394d658b536f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoplay: 1
+  sounds:
+  - {fileID: 8300000, guid: 02a9260c96c0531489afc2d3a7f413bb, type: 3}
+  - {fileID: 8300000, guid: ad6198a9ca8c1394890f962e30ceac38, type: 3}
+  - {fileID: 8300000, guid: 50d5a77091b21e44c8b3d071274bdcf0, type: 3}
+  loop: 1
+  min_range: 0.5
+  max_range: 7
+--- !u!82 &4825017251262915443
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5046902025398296152}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.9
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 4
+  MaxDistance: 15
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!95 &3304672392725688763
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5046902025398296152}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8eb25728928c88746893100a07329c4a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
