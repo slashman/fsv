@@ -102,8 +102,16 @@ public class World : MonoBehaviour
         if (plotPrefab != null) {
             Instantiate(plotPrefab, new Vector3(10, -1.18f, 1.9f), Quaternion.identity, transform);
         }
-        if (spawnNextCounter < 0 && plotPrefab == null && false) {
-            // int dice = Random.Range(1, 5);
+        if (spawnNextCounter < 0 && plotPrefab == null) {
+            int dice = Random.Range(1, 3);
+            int quantity = Random.Range(1, 5);
+            InventoryItem food  = Expedition.i.inventory.Find(i => i.itemType == ItemType.FOOD);
+            if (dice == 1) {
+                food.quantity = food.quantity - quantity;
+            }
+            if (dice == 2) {
+                food.quantity = food.quantity + quantity;
+            }
             GameObject prefab = HousePrefab;
             Instantiate(prefab, new Vector3(11, -1.18f, 1.9f), Quaternion.identity, transform);
             spawnNextCounter = Random.Range(20, 30);

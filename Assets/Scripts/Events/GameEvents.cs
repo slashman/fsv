@@ -3,11 +3,15 @@ using System.Collections.Generic;
 
 public static class GameEvents {
 	private static GameEvent[] events = new GameEvent[] {
-		new GameEvent() { id = "militia", prompt = "Un grupo armado te detiene, su lider pregunta:\n“Qué tenemos aquí? Reconozco chulavitas con solo verlos!“", options = new GameEventOption[] {
-			new GameEventOption() { description = "No somos chulavitas! Por favor déjame pasar con mi familia!" }
+		new GameEvent() { id = "militia", prompt = "A group of people armed with old rifles and machetes approaches." +
+			"\nOne man moves forward from the group while several men point to you with their guns." +
+            "\n“You look like a puto chulavita!“"
+			, options = new GameEventOption[] {
+
+			new GameEventOption() { description = "“I’m not a chulavita, I swear! Please let me pass with my family!“\r\n" }
 		}},
-		new GameEvent() { id = "casaquemada", prompt = "La casa de los Zapata... seguro ya paso por aquí esa terrible gente“", options = new GameEventOption[] {
-			new GameEventOption() { description = "No miren pa' allá mijitos, sigamos andando" }
+		new GameEvent() { id = "casaquemada", prompt = "Zapata's family home... Burnt by those who threatened us out of our home.", options = new GameEventOption[] {
+			new GameEventOption() { description = "It's better not to look, and keep walking..." }
 		}},
 		new GameEvent() {
 			id = "stolenAnimal",
@@ -24,9 +28,27 @@ public static class GameEvents {
 				new GameEventOption() { description = "Leave some food behind. Someone else may need it. [+10 food]" }
 			}
 		},
-		new GameEvent() { id = "house", prompt = "Tu familia se acerca a una casa, parece estar abandonada. Qué quieres hacer?", options = new GameEventOption[] {
-			new GameEventOption() { description = "Asaltar la casa" },
-			new GameEventOption() { description = "Seguir por el camino" },
+		new GameEvent() {
+			id = "rioMelcocho",
+			prompt = "Years ago, when looking at the crystalline waters of this river, at its colors, you’d think there can only exist peace." +
+			"\nNowadays however, you only think how easily your family will get shot if you stop here.",
+			options = new GameEventOption[] {
+				new GameEventOption() { description = "Don't stop now! We must go!" }
+			}
+		},
+		new GameEvent() {
+			id = "finca",
+			prompt = "There was a time when you’d visit the family who lived here." +
+			"\nBack then, you could trust your neighbors. You felt safe." +
+			"\nNow, you’re afraid to ask for help. What if they think you are part of the Chulavitas?",
+			options = new GameEventOption[] {
+				new GameEventOption() { description = "People have been shot for far less..." }
+			}
+		},
+		new GameEvent() { id = "house", prompt = "Your family aproaches what seems like an abandoned house." +
+			"\nProbably another family displaced by violence." +
+			"\n You may spend some time searching for food.", options = new GameEventOption[] {
+			new GameEventOption() { description = "Let's take the risk" }
 		}}
 	};
 
