@@ -3,15 +3,34 @@ using System.Collections.Generic;
 
 public static class GameEvents {
 	private static GameEvent[] events = new GameEvent[] {
+		new GameEvent() {
+			id = "finca",
+			prompt = "You approach your home, built with the sweat of your brow - years of hard work. Now you have no choice but leave it behind.",
+			options = new GameEventOption[] {
+				new GameEventOption() { description = "Let's hurry and pack whatever we can fit in Rosita, and on our own backs" }
+			}
+		},
+		new GameEvent() {
+			id = "uramita",
+			prompt = "You approach Uramita, a small town where your family used to live many years ago.",
+			options = new GameEventOption[] {
+				new GameEventOption() { description = "We can try to trade some of what we have here." }
+			}
+		},
+		new GameEvent() {
+			id = "dabeiba",
+			prompt = "You approach Dabeiba, a trade center of the region growing increasingly dangerous.",
+			options = new GameEventOption[] {
+				new GameEventOption() { description = "We can try to trade some of what we have here." }
+			}
+		},
 		new GameEvent() { id = "militia", prompt = "A group of people armed with old rifles and machetes approaches." +
 			"\nOne man moves forward from the group while several men point to you with their guns." +
-            "\n“You look like a puto chulavita!“"
-			, options = new GameEventOption[] {
-
+			"\n“You look like a god-damned chulavita!“", options = new GameEventOption[] {
 			new GameEventOption() { description = "“I’m not a chulavita, I swear! Please let me pass with my family!“\r\n" }
 		}},
-		new GameEvent() { id = "casaquemada", prompt = "Zapata's family home... Burnt by those who threatened us out of our home.", options = new GameEventOption[] {
-			new GameEventOption() { description = "It's better not to look, and keep walking..." }
+		new GameEvent() { id = "casaquemada", prompt = "The house of our friends the Zapatas... Burnt by those who threatened us out of our home.", options = new GameEventOption[] {
+			new GameEventOption() { description = "It's better not to look, kids, and just keep walking..." }
 		}},
 		new GameEvent() {
 			id = "stolenAnimal",
@@ -37,7 +56,7 @@ public static class GameEvents {
 			}
 		},
 		new GameEvent() {
-			id = "finca",
+			id = "finca2",
 			prompt = "There was a time when you’d visit the family who lived here." +
 			"\nBack then, you could trust your neighbors. You felt safe." +
 			"\nNow, you’re afraid to ask for help. What if they think you are part of the Chulavitas?",
@@ -64,21 +83,27 @@ public static class GameEvents {
 	}
 
 	public static void OptionSelected (GameEvent currentEvent, GameEventOption option) {
-		if (currentEvent.id == "house") {
-			if (option.id == "steal") {
-				int dice = UnityEngine.Random.Range(1, 4);
-				if (dice < 3) {
-					InventoryItem food = Expedition.i.inventory.Find(i => i.itemType == ItemType.FOOD);
-					food.quantity = food.quantity + UnityEngine.Random.Range(5, 8);;
-					GameUI.i.ShowEvent(GameEvents.Get("house_food"));
-				} else {
-					FamilyMember rando = Expedition.i.members[UnityEngine.Random.Range(0, Expedition.i.members.Count)];
-					rando.TakeDamage(UnityEngine.Random.Range(2, 5));
-					GameUI.i.ShowEvent(GameEvents.Get("house_flee"));
+		switch (currentEvent.id) {
+			case "house":
+				if (option.id == "steal") {
+					int dice = UnityEngine.Random.Range(1, 4);
+					if (dice < 3) {
+						InventoryItem food = Expedition.i.inventory.Find(i => i.itemType == ItemType.FOOD);
+						food.quantity = food.quantity + UnityEngine.Random.Range(5, 8);;
+						GameUI.i.ShowEvent(GameEvents.Get("house_food"));
+					} else {
+						FamilyMember rando = Expedition.i.members[UnityEngine.Random.Range(0, Expedition.i.members.Count)];
+						rando.TakeDamage(UnityEngine.Random.Range(2, 5));
+						GameUI.i.ShowEvent(GameEvents.Get("house_flee"));
+					}
+					GameUI.i.UpdateStatus();
+					return;
 				}
-				GameUI.i.UpdateStatus();
+				break;
+			case "finca": case "uramita": case "dabeiba":
+				GameUI.i.EventsDialog.Hide();
+				GameUI.i.ShowTransfer(currentEvent.id);
 				return;
-			}
 		}
 		GameUI.i.EventsDialog.Hide();
 		World.i.ResumeTime();
