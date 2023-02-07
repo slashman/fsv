@@ -11,7 +11,7 @@ public class World : MonoBehaviour
     public int[] EventPrefabWeights;
     public GameObject BurningHousePrefab;
     public GameObject River;
-    public GameObject MilitiaPrefab;
+    public GameObject[] MilitiaPrefabs;
 
     public GameObject FincaPrefab;
     public GameObject DabeibaPrefab;
@@ -103,12 +103,12 @@ public class World : MonoBehaviour
         } else if (progress > 100 && !militiaGenerated) {
             preventRandom = true;
             if (progress > 100 + randomProgressMargin) {
-                plotPrefab = MilitiaPrefab;
+                plotPrefab = MilitiaPrefabs[Random.Range(0, MilitiaPrefabs.Length)];
                 militiaGenerated = true;
             }
-        } else if (progress > 105 && !riverGenerated) {
+        } else if (progress > 115 && !riverGenerated) {
             preventRandom = true;
-            if (progress > 105 + randomProgressMargin) {
+            if (progress > 115 + randomProgressMargin) {
                 plotPrefab = River;
                 riverGenerated = true;
             }

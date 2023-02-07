@@ -42,14 +42,38 @@ public static class GameEvents {
 				}
 			}
 		},
-		new GameEvent() { id = "militia", prompt = "A group of people armed with old rifles and machetes approaches." +
-			"\nOne man moves forward from the group while several men point to you with their guns." +
-			"\n“You look like a god-damned chulavita!“", options = new GameEventOption[] {
+		new GameEvent() { id = "chulavitas", prompt = "A group of people armed with old rifles and machetes approaches." +
+			"\n\nOne man moves forward from the group while several men point to you with their guns." +
+			"\n\n“You look like a god-damned cachiporro, I know one when I see it!“", options = new GameEventOption[] {
 				new GameEventOption() {
-					description = "I’m not a chulavita, I swear! Please let me pass!" 
+					description = "I’m not a cachiporro, I swear! Please let me pass!",
+					action = () => {
+						GameUI.i.ShowEvent(GameEvents.Get("notAChula"));
+					}
 				},
 				new GameEventOption() {
-					description = "And a proud one!",
+					description = "Death to all the chusma, you will destroy our country... You shall burn in hell!",
+					action = () => {
+						GameUI.i.ShowGameOver("The man spits on your face before hitting you with the butt of his rifle. Everything blacks out.\n\n"+
+							"When you wake up, the first thing you see is a crowd. You don’t see your family.\n\n"+
+							"You try to move, but your hands are tied. A man grabs your hair and lifts your face. You see many people. Where are you? Your head hurts too much to think and the man speaks.\n\n"+
+							"Look at the faces of the traitors! Know that even if the traitors are children or old people we don’t care! We will pacify this country, with fire and blood if needed!\n\n"+
+							"Everything blacks out again. This time forever.");
+					}
+				}
+			}
+		},
+		new GameEvent() { id = "cachiporros", prompt = "A group of people armed with old rifles and machetes approaches." +
+			"\n\nOne man moves forward from the group while several men point to you with their guns." +
+			"\n\n“You look like a god-damned chulavita, I know one when I see it!“", options = new GameEventOption[] {
+				new GameEventOption() {
+					description = "I’m not a chulavita, I swear! Please let me pass!",
+					action = () => {
+						GameUI.i.ShowEvent(GameEvents.Get("notAChula"));
+					}
+				},
+				new GameEventOption() {
+					description = "Death to all the state-backed oppressor land-grabber murderers!",
 					action = () => {
 						GameUI.i.ShowGameOver("The man spits on your face before hitting you with the butt of his rifle. Everything blacks out.\n\n"+
 							"When you wake up, the first thing you see is a crowd. You don’t see your family.\n\n"+
@@ -121,8 +145,8 @@ public static class GameEvents {
 									Expedition.i.Heal();
 									GameUI.i.UpdateStatus();
 								}
-					}
-				},
+							}
+						},
 						new GameEventOption () {
 							description = "Steal some crops and chickens.",
 							action = () => {
@@ -240,7 +264,7 @@ public static class GameEvents {
 	public static void OptionSelected (GameEvent currentEvent, GameEventOption option) {
 		if (option.action != null) {
 			option.action();
-				return;
+			return;
 		}
 		GameUI.i.EventsDialog.Hide();
 		World.i.ResumeTime();

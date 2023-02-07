@@ -345,7 +345,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 898888551606861311, guid: e37f5304ebd3945439490a2046f33385, type: 3}
       propertyPath: m_Name
-      value: Milicianos
+      value: Capchiporros
       objectReference: {fileID: 0}
     - target: {fileID: 8496399330959512491, guid: e37f5304ebd3945439490a2046f33385, type: 3}
       propertyPath: m_Sprite
@@ -401,7 +401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8954635173100080717, guid: e37f5304ebd3945439490a2046f33385, type: 3}
       propertyPath: TriggerEventId
-      value: militia
+      value: cachiporros
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e37f5304ebd3945439490a2046f33385, type: 3}
