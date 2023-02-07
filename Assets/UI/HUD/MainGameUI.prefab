@@ -401,6 +401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IntroLayer: {fileID: 6186546884508463832}
   PartyStatus: {fileID: 4471822625530886218}
+  Map: {fileID: 4471822625273360039}
   MovementUI: {fileID: 6505932517764160921}
 --- !u!1 &4471822624997297826
 GameObject:
@@ -552,7 +553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4471822625273360038
 RectTransform:
   m_ObjectHideFlags: 0
