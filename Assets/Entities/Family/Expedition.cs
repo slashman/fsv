@@ -42,17 +42,10 @@ public class Expedition: MonoBehaviour {
 	}
 
 	public void ConsumeFood () {
-		InventoryItem foodItem = inventory.Find(i => i.itemType == ItemType.FOOD);
 		for (int i = 0; i < members.Count; i++) {
 			FamilyMember member = members[i];
-			foodItem.quantity--;
-			if (foodItem.quantity <= 0) {
-				foodItem.quantity = 0;
-				member.TakeDamage(UnityEngine.Random.Range(1, 2));
-			}
+			member.HungerUpdate();
 		}
-		GameUI.i.UpdateStatus();
-		Expedition.i.CheckDeath();
 	}
 
 	public void Die (FamilyMember member) {
