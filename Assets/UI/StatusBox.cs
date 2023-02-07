@@ -18,4 +18,12 @@ public class StatusBox : MonoBehaviour {
 	public void Feed () {
 		this.familyMember.ConsumeFood();
 	}
+
+	public void OnPointerEnter () {
+		transform.localScale = new Vector3(1.1f,1.1f,1);
+	}
+
+	public void OnPointerExit () {
+		transform.localScale = new Vector3(1,1,1);
+	}
 }
