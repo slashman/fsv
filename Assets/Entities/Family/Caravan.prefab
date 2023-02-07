@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73be424f16d1f54599b5b30ddd5a487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 6
+  HP: 5
   BaseCarryCapacity: 1
   statusBox: {fileID: 0}
   isHuman: 1
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73be424f16d1f54599b5b30ddd5a487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 12
+  HP: 8
   BaseCarryCapacity: 3
   statusBox: {fileID: 0}
   isHuman: 1
@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73be424f16d1f54599b5b30ddd5a487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 15
+  HP: 10
   BaseCarryCapacity: 4
   statusBox: {fileID: 0}
   isHuman: 1
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73be424f16d1f54599b5b30ddd5a487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 20
+  HP: 14
   BaseCarryCapacity: 7
   statusBox: {fileID: 0}
   isHuman: 0
@@ -708,7 +708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73be424f16d1f54599b5b30ddd5a487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 20
+  HP: 14
   BaseCarryCapacity: 2
   statusBox: {fileID: 0}
   isHuman: 1
@@ -832,7 +832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73be424f16d1f54599b5b30ddd5a487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 15
+  HP: 10
   BaseCarryCapacity: 4
   statusBox: {fileID: 0}
   isHuman: 1
@@ -958,7 +958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73be424f16d1f54599b5b30ddd5a487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 15
+  HP: 10
   BaseCarryCapacity: 0
   statusBox: {fileID: 0}
   isHuman: 0
