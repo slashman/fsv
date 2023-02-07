@@ -107,6 +107,7 @@ public class TradeDialog: MonoBehaviour {
 	public void Hide () {
 		World.i.ResumeTime();
 		panel.SetActive(false);
+		GameUI.i.UpdateStatus();
 		if (currentID == "finca" || currentID == "dabeiba" || currentID == "uramita") {
 			GetComponent<AudioSource>().PlayOneShot(closeDoorSFX);
 			World.i.UnPauseBGSFX();	
