@@ -13,7 +13,15 @@ public class EventsDialog : MonoBehaviour {
 
     private GameEvent currentEvent;
 
+    public void ShowPersonEvent(GameEvent e, string memberName) {
+        DoShowEvent(e, memberName);
+    }
+
     public void ShowEvent(GameEvent e) {
+        DoShowEvent(e, null);
+    }
+
+    private void DoShowEvent(GameEvent e, string? memberName) {
         GetComponent<AudioSource>().PlayOneShot(eventSFX);
         currentEvent = e;
         RootPanel.SetActive(true);
@@ -25,6 +33,9 @@ public class EventsDialog : MonoBehaviour {
             Buttons[i].GetComponentInChildren<TMP_Text>().text = e.options[i].description;
         }
         PromptText.text = e.prompt;
+        if (memberName != null) {
+            PromptText.text = e.prompt.Replace("XXX", memberName);
+        }
     }
 
     public void Hide () {

@@ -5,6 +5,7 @@ public class FamilyMember: MonoBehaviour {
 	public int BaseCarryCapacity;
 	public StatusBox statusBox;
 	public bool isHuman;
+	public string memberName;
 
 	void Start () {
 		statusBox.HPText.text = this.HP.ToString();

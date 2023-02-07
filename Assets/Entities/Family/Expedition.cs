@@ -92,8 +92,17 @@ public class Expedition: MonoBehaviour {
 		}
 		if (!foundHuman) {
 			World.i.StopTime();
-			GameUI.i.ShowGameOver();
+			GameUI.i.ShowGameOver("You didn't make it to the city\n\nBetter luck next life.");
 		}
+	}
+
+	public List<FamilyMember> GetHumans () {
+		return members.FindAll(m => m.isHuman);
+	}
+
+	public FamilyMember RandomHuman () {
+		List<FamilyMember> humans = members.FindAll(m => m.isHuman);
+		return humans[UnityEngine.Random.Range(0, humans.Count)];
 	}
 
 	public void TimePassed () {

@@ -27,8 +27,43 @@ public static class GameEvents {
 		new GameEvent() { id = "militia", prompt = "A group of people armed with old rifles and machetes approaches." +
 			"\nOne man moves forward from the group while several men point to you with their guns." +
 			"\n“You look like a god-damned chulavita!“", options = new GameEventOption[] {
-			new GameEventOption() { description = "“I’m not a chulavita, I swear! Please let me pass with my family!“\r\n" }
-		}},
+				new GameEventOption() { id = "notAChula", description = "I’m not a chulavita, I swear! Please let me pass!" },
+				new GameEventOption() { id = "proudChula", description = "And a proud one!" }
+			}
+		},
+			new GameEvent() {
+				id = "notAChula",
+				prompt = "The man turns his back on you, and without looking gives a signal to his men after spitting to the ground.\n\n- Kill them.",
+				options = new GameEventOption[] {
+					new GameEventOption() { description = "Have Mercy!" }
+				}
+			},
+				new GameEvent() {
+					id = "notAChula1",
+					prompt = "You see a chance to escape and shout for your family to run to the woods.\n\n"+
+						"Chaos ensues as bullets fly. After a while you stop running and see who’s with you.\n\n"+
+						"Sadly XXX is missing.",
+					options = new GameEventOption[] {
+						new GameEventOption() { description = "God rest his soul." }
+					}
+				},
+				new GameEvent() {
+					id = "notAChula2",
+					prompt = "You see a chance to escape and shout for your family to run to the woods.\n\n"+
+						"Chaos ensues as bullets fly. After a while you stop running and see who’s with you.\n\n"+
+						"God is blessed, you are all able to regroup and continue.",
+					options = new GameEventOption[] {
+						new GameEventOption() { description = "Thank you, holy virgin." }
+					}
+				},
+				new GameEvent() {
+					id = "notAChula3",
+					prompt = "You see a chance to escape and run to the woods.\n\n"+
+						"After a while you stop running and notice you were hit. ",
+					options = new GameEventOption[] {
+						new GameEventOption() { description = "Thank you, holy virgin." }
+					}
+				},
 		new GameEvent() { id = "casaquemada", prompt = "The house of our friends the Zapatas... Burnt by those who threatened us out of our home.", options = new GameEventOption[] {
 			new GameEventOption() { description = "It's better not to look, kids, and just keep walking..." }
 		}},
@@ -103,6 +138,26 @@ public static class GameEvents {
 			case "finca": case "uramita": case "dabeiba":
 				GameUI.i.EventsDialog.Hide();
 				GameUI.i.ShowTransfer(currentEvent.id);
+				return;
+			case "militia":
+				if (option.id == "notAChula") {
+					if (Expedition.i.GetHumans().Count == 1) {
+						GameUI.i.ShowEvent(GameEvents.Get("notAChula3"));
+						Expedition.i.GetHumans()[0].TakeDamage(UnityEngine.Random.Range(10, 30));
+					} else if (UnityEngine.Random.Range(0, 100) < 20) {
+						GameUI.i.ShowEvent(GameEvents.Get("notAChula2"));
+					} else {
+						FamilyMember rando = Expedition.i.RandomHuman();
+						Expedition.i.Die(rando);
+						GameUI.i.ShowPersonEvent(GameEvents.Get("notAChula1"), rando.memberName);
+					}
+				} else {
+					GameUI.i.ShowGameOver("The man spits on your face before hitting you with the butt of his rifle. Everything blacks out.\n\n"+
+					"When you wake up, the first thing you see is a crowd. You don’t see your family.\n\n"+
+					"You try to move, but your hands are tied. A man grabs your hair and lifts your face. You see many people. Where are you? Your head hurts too much to think and the man speaks.\n\n"+
+					"Look at the faces of the traitors! Know that even if the traitors are children or old people we don’t care! We will pacify this country, with fire and blood if needed!\n\n"+
+					"Everything blacks out again. This time forever.");
+				}
 				return;
 		}
 		GameUI.i.EventsDialog.Hide();

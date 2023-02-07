@@ -17,9 +17,13 @@ public class GameUI : MonoBehaviour
     public GameObject TitlePanel;
     public GameObject GameHUD;
     public GameObject Main2DScene;
-    public GameObject GameOverPanel;
+    public GameOverPanel GameOverPanel;
     public GameObject VictoryPanel;
     public Transform ProgressIndicator;
+
+    public void ShowPersonEvent (GameEvent gameEvent, string memberName) {
+        EventsDialog.ShowPersonEvent(gameEvent, memberName);
+    }
 
     public void ShowEvent (GameEvent gameEvent) {
         EventsDialog.ShowEvent(gameEvent);
@@ -33,8 +37,9 @@ public class GameUI : MonoBehaviour
         FoodText.text = Expedition.i.GetTotalFood().ToString();
     }
 
-    public void ShowGameOver () {
-        GameOverPanel.SetActive(true);
+    public void ShowGameOver (string gameOverDescription) {
+
+        GameOverPanel.Show(gameOverDescription);
     }
 
     public void ShowVictory () {
