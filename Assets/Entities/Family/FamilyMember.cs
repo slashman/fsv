@@ -16,8 +16,8 @@ public class FamilyMember: MonoBehaviour {
 		return BaseCarryCapacity;
 	}
 
-	public void TakeDamage() {
-		HP--;
+	public void TakeDamage(int damage) {
+		HP -= damage;
 		if (HP <= 0) {
 			HP = 0;
 			Expedition.i.Die(this);

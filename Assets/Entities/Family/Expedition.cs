@@ -48,7 +48,7 @@ public class Expedition: MonoBehaviour {
 			foodItem.quantity--;
 			if (foodItem.quantity <= 0) {
 				foodItem.quantity = 0;
-				member.TakeDamage();
+				member.TakeDamage(UnityEngine.Random.Range(1, 2));
 			}
 		}
 		GameUI.i.UpdateStatus();
