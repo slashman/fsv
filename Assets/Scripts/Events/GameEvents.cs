@@ -7,35 +7,78 @@ public static class GameEvents {
 			id = "finca",
 			prompt = "You approach your home, built with the sweat of your brow - years of hard work. Now you have no choice but leave it behind.",
 			options = new GameEventOption[] {
-				new GameEventOption() { description = "Let's hurry and pack whatever we can fit in Rosita, and on our own backs" }
+				new GameEventOption() {
+					description = "Let's hurry and pack whatever we can fit in Rosita, and on our own backs",
+					action = () => {
+						GameUI.i.EventsDialog.Hide();
+						GameUI.i.ShowTransfer("finca");
+					}
+				}
 			}
 		},
 		new GameEvent() {
 			id = "uramita",
 			prompt = "You approach Uramita, a small town where your family used to live many years ago.",
 			options = new GameEventOption[] {
-				new GameEventOption() { description = "We can try to trade some of what we have here." }
+				new GameEventOption() {
+					description = "We can try to trade some of what we have here.",
+					action = () => {
+						GameUI.i.EventsDialog.Hide();
+						GameUI.i.ShowTransfer("uramita");
+					}
+				}
 			}
 		},
 		new GameEvent() {
 			id = "dabeiba",
 			prompt = "You approach Dabeiba, a trade center of the region growing increasingly dangerous.",
 			options = new GameEventOption[] {
-				new GameEventOption() { description = "We can try to trade some of what we have here." }
+				new GameEventOption() {
+					description = "We can try to trade some of what we have here.",
+					action = () => {
+						GameUI.i.EventsDialog.Hide();
+						GameUI.i.ShowTransfer("dabeiba");
+					}
+				}
 			}
 		},
 		new GameEvent() { id = "militia", prompt = "A group of people armed with old rifles and machetes approaches." +
 			"\nOne man moves forward from the group while several men point to you with their guns." +
 			"\n“You look like a god-damned chulavita!“", options = new GameEventOption[] {
-				new GameEventOption() { id = "notAChula", description = "I’m not a chulavita, I swear! Please let me pass!" },
-				new GameEventOption() { id = "proudChula", description = "And a proud one!" }
+				new GameEventOption() {
+					description = "I’m not a chulavita, I swear! Please let me pass!" 
+				},
+				new GameEventOption() {
+					description = "And a proud one!",
+					action = () => {
+						GameUI.i.ShowGameOver("The man spits on your face before hitting you with the butt of his rifle. Everything blacks out.\n\n"+
+							"When you wake up, the first thing you see is a crowd. You don’t see your family.\n\n"+
+							"You try to move, but your hands are tied. A man grabs your hair and lifts your face. You see many people. Where are you? Your head hurts too much to think and the man speaks.\n\n"+
+							"Look at the faces of the traitors! Know that even if the traitors are children or old people we don’t care! We will pacify this country, with fire and blood if needed!\n\n"+
+							"Everything blacks out again. This time forever.");
+					}
+				}
 			}
 		},
 			new GameEvent() {
 				id = "notAChula",
 				prompt = "The man turns his back on you, and without looking gives a signal to his men after spitting to the ground.\n\n- Kill them.",
 				options = new GameEventOption[] {
-					new GameEventOption() { description = "Have Mercy!" }
+					new GameEventOption() {
+						description = "Have Mercy!",
+						action = () => {
+							if (Expedition.i.GetHumans().Count == 1) {
+								GameUI.i.ShowEvent(GameEvents.Get("notAChula3"));
+								Expedition.i.GetHumans()[0].TakeDamage(UnityEngine.Random.Range(10, 30));
+							} else if (UnityEngine.Random.Range(0, 100) < 20) {
+								GameUI.i.ShowEvent(GameEvents.Get("notAChula2"));
+							} else {
+								FamilyMember rando = Expedition.i.RandomHuman();
+								Expedition.i.Die(rando);
+								GameUI.i.ShowPersonEvent(GameEvents.Get("notAChula1"), rando.memberName);
+							}
+						}
+					}
 				}
 			},
 				new GameEvent() {
@@ -61,7 +104,9 @@ public static class GameEvents {
 					prompt = "You see a chance to escape and run to the woods.\n\n"+
 						"After a while you stop running and notice you were hit. ",
 					options = new GameEventOption[] {
-						new GameEventOption() { description = "Thank you, holy virgin." }
+						new GameEventOption() { description = "Argh!" }
+					}
+				},
 					}
 				},
 		new GameEvent() { id = "casaquemada", prompt = "The house of our friends the Zapatas... Burnt by those who threatened us out of our home.", options = new GameEventOption[] {
@@ -102,7 +147,23 @@ public static class GameEvents {
 		new GameEvent() { id = "house", prompt = "Your family aproaches what seems like an abandoned house." +
 			"\nProbably another family displaced by violence." +
 			"\n Should we search for food, risking to be taken as thieves and attacked?", options = new GameEventOption[] {
-			new GameEventOption() { id = "steal", description = "Let's take the risk, we don't have a choice." },
+			new GameEventOption() { 
+				description = "Let's take the risk, we don't have a choice.",
+				action = () => {
+					int dice = UnityEngine.Random.Range(1, 4);
+					if (dice < 3) {
+						InventoryItem food = Expedition.i.inventory.Find(i => i.itemType == ItemType.FOOD);
+						food.quantity = food.quantity + UnityEngine.Random.Range(5, 8);;
+						GameUI.i.ShowEvent(GameEvents.Get("house_food"));
+					} else {
+						FamilyMember rando = Expedition.i.members[UnityEngine.Random.Range(0, Expedition.i.members.Count)];
+						rando.TakeDamage(UnityEngine.Random.Range(2, 5));
+						GameUI.i.ShowEvent(GameEvents.Get("house_flee"));
+					}
+					GameUI.i.UpdateStatus();
+					return;
+				}
+			},
 			new GameEventOption() { description = "No. Let's continue down the road." },
 		}},
 		new GameEvent() { id = "house_food", prompt = "Luckily, we found some yuca in the kitchen.", options = new GameEventOption[] {
@@ -118,46 +179,8 @@ public static class GameEvents {
 	}
 
 	public static void OptionSelected (GameEvent currentEvent, GameEventOption option) {
-		switch (currentEvent.id) {
-			case "house":
-				if (option.id == "steal") {
-					int dice = UnityEngine.Random.Range(1, 4);
-					if (dice < 3) {
-						InventoryItem food = Expedition.i.inventory.Find(i => i.itemType == ItemType.FOOD);
-						food.quantity = food.quantity + UnityEngine.Random.Range(5, 8);;
-						GameUI.i.ShowEvent(GameEvents.Get("house_food"));
-					} else {
-						FamilyMember rando = Expedition.i.members[UnityEngine.Random.Range(0, Expedition.i.members.Count)];
-						rando.TakeDamage(UnityEngine.Random.Range(2, 5));
-						GameUI.i.ShowEvent(GameEvents.Get("house_flee"));
-					}
-					GameUI.i.UpdateStatus();
-					return;
-				}
-				break;
-			case "finca": case "uramita": case "dabeiba":
-				GameUI.i.EventsDialog.Hide();
-				GameUI.i.ShowTransfer(currentEvent.id);
-				return;
-			case "militia":
-				if (option.id == "notAChula") {
-					if (Expedition.i.GetHumans().Count == 1) {
-						GameUI.i.ShowEvent(GameEvents.Get("notAChula3"));
-						Expedition.i.GetHumans()[0].TakeDamage(UnityEngine.Random.Range(10, 30));
-					} else if (UnityEngine.Random.Range(0, 100) < 20) {
-						GameUI.i.ShowEvent(GameEvents.Get("notAChula2"));
-					} else {
-						FamilyMember rando = Expedition.i.RandomHuman();
-						Expedition.i.Die(rando);
-						GameUI.i.ShowPersonEvent(GameEvents.Get("notAChula1"), rando.memberName);
-					}
-				} else {
-					GameUI.i.ShowGameOver("The man spits on your face before hitting you with the butt of his rifle. Everything blacks out.\n\n"+
-					"When you wake up, the first thing you see is a crowd. You don’t see your family.\n\n"+
-					"You try to move, but your hands are tied. A man grabs your hair and lifts your face. You see many people. Where are you? Your head hurts too much to think and the man speaks.\n\n"+
-					"Look at the faces of the traitors! Know that even if the traitors are children or old people we don’t care! We will pacify this country, with fire and blood if needed!\n\n"+
-					"Everything blacks out again. This time forever.");
-				}
+		if (option.action != null) {
+			option.action();
 				return;
 		}
 		GameUI.i.EventsDialog.Hide();
