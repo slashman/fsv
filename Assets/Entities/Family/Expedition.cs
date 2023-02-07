@@ -96,6 +96,15 @@ public class Expedition: MonoBehaviour {
 		}
 	}
 
+	public bool HasAdults () {
+		return members.Find(m => m.isHuman && m.isAdult) != null;
+	}
+
+	public FamilyMember RandomAdult () {
+		List<FamilyMember> adults = members.FindAll(m => m.isHuman && m.isAdult);
+		return adults[UnityEngine.Random.Range(0, adults.Count)];
+	}
+
 	public List<FamilyMember> GetHumans () {
 		return members.FindAll(m => m.isHuman);
 	}
@@ -126,6 +135,18 @@ public class Expedition: MonoBehaviour {
 	public void Heal () {
 		foreach (FamilyMember familyMember in members) {
 			familyMember.Heal();
+		}
+	}
+
+	public bool HasValuables () {
+		return this.inventory.Find(i => i.quantity > 0) != null;
+	}
+
+	public void LoseValuables () {
+		for (int i = 0; i < 5; i++) {
+			InventoryItem randomInventoryItem = this.inventory[UnityEngine.Random.Range(0, this.inventory.Count)];
+			if (randomInventoryItem.quantity > 0)
+				randomInventoryItem.quantity --;
 		}
 	}
 }

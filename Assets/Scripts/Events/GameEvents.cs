@@ -190,7 +190,54 @@ public static class GameEvents {
 						}
 					},
 
-					
+		new GameEvent() { id = "bandits", prompt = "Some bandoleros approach with machetes and wooden clubs. “Give us your valuables! Or die!”", options = new GameEventOption[] {
+			new GameEventOption() { description = "Drop some items and run.", action = () => {
+				if (!Expedition.i.HasValuables()) {
+					GameUI.i.ShowEvent(GameEvents.Get("bandits_5"));
+				} else {
+					Expedition.i.LoseValuables();
+					GameUI.i.ShowEvent(GameEvents.Get("bandits_1"));
+				}
+			}},
+			new GameEventOption() { description = "Fight!", action = () => {
+				if (!Expedition.i.HasAdults()) {
+					if (Expedition.i.HasValuables()) {
+						Expedition.i.LoseValuables();
+						GameUI.i.ShowEvent(GameEvents.Get("bandits_4"));
+					} else {
+						GameUI.i.ShowEvent(GameEvents.Get("bandits_5"));
+					}
+					return;
+				}
+				FamilyMember fighter = Expedition.i.RandomAdult();
+				if (fighter.Wins()) {
+					GameUI.i.ShowPersonEvent(GameEvents.Get("bandits_2"), fighter.memberName);
+				} else {
+					Expedition.i.LoseValuables();
+					GameUI.i.ShowEvent(GameEvents.Get("bandits_3"));
+				}
+			}}
+		}},
+			new GameEvent() { id = "bandits_1", prompt = "The bandoleros run to grab the items. They are also famished, maybe ran out of their homes too. Using this opportunity, you and your family flee.",
+			options = new GameEventOption[] {
+				new GameEventOption() { description = "Ok"},
+			}},
+			new GameEvent() { id = "bandits_2", prompt = "XXX will have to heal minor wounds, but you’ll retain your family’s positions.",
+			options = new GameEventOption[] {
+				new GameEventOption() { description = "Ok" },
+			}},
+			new GameEvent() { id = "bandits_3", prompt = "You black out. Your family seems scared but safe. The bandoleros were scared and in a hurry so they only stole some items.",
+			options = new GameEventOption[] {
+				new GameEventOption() { description = "Ok" },
+			}},
+			new GameEvent() { id = "bandits_4", prompt = "With no one able to fight, the bandoleros laugh and take some items before leaving.",
+			options = new GameEventOption[] {
+				new GameEventOption() { description = "Curse them." },
+			}},
+			new GameEvent() { id = "bandits_5", prompt = "Unfortunately for the bandoleros, they have more than you have.",
+			options = new GameEventOption[] {
+				new GameEventOption() { description = "Sorry." },
+			}},
 
 		new GameEvent() { id = "casaquemada", prompt = "The house of our friends, the Zapata...\n\nBurnt down by those who threatened us out of our home.", options = new GameEventOption[] {
 			new GameEventOption() { description = "It's better not to look, kids, and just keep walking..." }

@@ -102,6 +102,7 @@ MonoBehaviour:
   BaseCarryCapacity: 1
   statusBox: {fileID: 0}
   isHuman: 1
+  isAdult: 0
   memberName: Clara
 --- !u!95 &1286744084505097118
 Animator:
@@ -225,6 +226,7 @@ MonoBehaviour:
   BaseCarryCapacity: 3
   statusBox: {fileID: 0}
   isHuman: 1
+  isAdult: 0
   memberName: Maria
 --- !u!95 &3933269739329295413
 Animator:
@@ -348,6 +350,7 @@ MonoBehaviour:
   BaseCarryCapacity: 4
   statusBox: {fileID: 0}
   isHuman: 1
+  isAdult: 1
   memberName: Manuel
 --- !u!95 &7591713394027949421
 Animator:
@@ -471,6 +474,7 @@ MonoBehaviour:
   BaseCarryCapacity: 7
   statusBox: {fileID: 0}
   isHuman: 0
+  isAdult: 0
   memberName: Rosita
 --- !u!95 &2034105814741076485
 Animator:
@@ -708,6 +712,7 @@ MonoBehaviour:
   BaseCarryCapacity: 2
   statusBox: {fileID: 0}
   isHuman: 1
+  isAdult: 1
   memberName: Esperanza
 --- !u!95 &1991882395341743399
 Animator:
@@ -831,6 +836,7 @@ MonoBehaviour:
   BaseCarryCapacity: 4
   statusBox: {fileID: 0}
   isHuman: 1
+  isAdult: 1
   memberName: Tiberio
 --- !u!95 &464681234696723256
 Animator:
@@ -956,6 +962,7 @@ MonoBehaviour:
   BaseCarryCapacity: 0
   statusBox: {fileID: 0}
   isHuman: 0
+  isAdult: 0
   memberName: Avispao
 --- !u!114 &1623875026994444391
 MonoBehaviour:

@@ -763,7 +763,8 @@ MonoBehaviour:
   EventPrefabs:
   - {fileID: 979945533384576589, guid: 594febbd98f71294cb41bb22b49f00bb, type: 3}
   - {fileID: 979945533384576589, guid: 778e3e5cc933da843a8f7e51ecd881c8, type: 3}
-  EventPrefabWeights: 0100000003000000
+  - {fileID: 2278310010111986575, guid: 83348ef3ff96a484eb3ae2bca8691717, type: 3}
+  EventPrefabWeights: 010000000300000001000000
   BurningHousePrefab: {fileID: 979945533384576589, guid: a1b3eeec08909b445ad7cfb0ffe326b4, type: 3}
   River: {fileID: 979945533384576589, guid: 044a8e0450283f84081b33e03396fc25, type: 3}
   MilitiaPrefabs:

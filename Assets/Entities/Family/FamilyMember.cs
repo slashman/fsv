@@ -6,6 +6,7 @@ public class FamilyMember: MonoBehaviour {
 	public int BaseCarryCapacity;
 	public StatusBox statusBox;
 	public bool isHuman;
+	public bool isAdult;
 	public string memberName;
 
 	void Start () {
@@ -33,6 +34,10 @@ public class FamilyMember: MonoBehaviour {
 		if (HP > MaxHP) {
 			HP = MaxHP;
 		}
+	}
+
+	public bool Wins () {
+		return UnityEngine.Random.Range (0, 10) > 5;
 	}
 
 }
