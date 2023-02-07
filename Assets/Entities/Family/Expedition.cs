@@ -122,4 +122,10 @@ public class Expedition: MonoBehaviour {
 	public int GetTotalFood () {
 		return GetFoodItem().quantity; // This item should never be removed
 	}
+
+	public void Heal () {
+		foreach (FamilyMember familyMember in members) {
+			familyMember.Heal();
+		}
+	}
 }

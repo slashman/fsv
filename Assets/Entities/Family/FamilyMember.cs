@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class FamilyMember: MonoBehaviour {
 	public int HP;
+	private int MaxHP;
 	public int BaseCarryCapacity;
 	public StatusBox statusBox;
 	public bool isHuman;
@@ -10,6 +11,7 @@ public class FamilyMember: MonoBehaviour {
 	void Start () {
 		statusBox.HPText.text = this.HP.ToString();
 		statusBox.StatusText.text = "";
+		MaxHP = this.HP;
 	}
 
 	public int GetCarryCapacity () {
@@ -24,5 +26,13 @@ public class FamilyMember: MonoBehaviour {
 			Expedition.i.Die(this);
 		}
 		statusBox.HPText.text = this.HP.ToString();
-	}	
+	}
+
+	public void Heal () {
+		HP += UnityEngine.Random.Range (5, 10);
+		if (HP > MaxHP) {
+			HP = MaxHP;
+		}
+	}
+
 }

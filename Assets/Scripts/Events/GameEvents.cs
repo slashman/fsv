@@ -107,9 +107,68 @@ public static class GameEvents {
 						new GameEventOption() { description = "Argh!" }
 					}
 				},
+				new GameEvent() {
+					id = "countryHouse",
+					prompt = "You see a farm with fat animals and crops ready for harvest. It doesn’t look like there is anyone home.",
+					options = new GameEventOption[] {
+						new GameEventOption () {
+							description = "Call out for help.",
+							action = () => {
+								if (UnityEngine.Random.Range(0, 100) < 50) {
+									GameUI.i.ShowEvent(GameEvents.Get("countryHouse_1"));
+								} else {
+									GameUI.i.ShowEvent(GameEvents.Get("countryHouse_2"));
+									Expedition.i.Heal();
+									GameUI.i.UpdateStatus();
+								}
 					}
 				},
-		new GameEvent() { id = "casaquemada", prompt = "The house of our friends the Zapatas... Burnt by those who threatened us out of our home.", options = new GameEventOption[] {
+						new GameEventOption () {
+							description = "Steal some crops and chickens.",
+							action = () => {
+								if (UnityEngine.Random.Range(0, 100) < 50) {
+									GameUI.i.ShowEvent(GameEvents.Get("countryHouse_1"));
+								} else {
+									GameUI.i.ShowEvent(GameEvents.Get("countryHouse_3"));
+									InventoryItem food = Expedition.i.inventory.Find(i => i.itemType == ItemType.FOOD);
+									food.quantity = food.quantity + UnityEngine.Random.Range(20, 40);
+									GameUI.i.UpdateStatus();
+								}
+							}
+						}
+					}
+				},
+					new GameEvent() {
+						id = "countryHouse_1",
+						prompt = "“No, no, no! Get out! THIEVES! REBELS! KILLERS!” An old man runs out from the house with a machete, driving your family out of the property.",
+						options = new GameEventOption[] {
+							new GameEventOption () {
+								description = "Run away!"
+							}
+						}
+					},
+					new GameEvent() {
+						id = "countryHouse_2",
+						prompt = "An old man comes out of the house and approaches: Oh no… Please don’t tell me you also come from San Vicente. Come inside and share a meal with me. Helping is the least I could do.",
+						options = new GameEventOption[] {
+							new GameEventOption () {
+								description = "May God bless you and your family."
+							}
+						}
+					},
+					new GameEvent() {
+						id = "countryHouse_3",
+						prompt = "Hearing no answer, you go ahead and steal some crops and chickens.",
+						options = new GameEventOption[] {
+							new GameEventOption () {
+								description = "God, forgive us."
+							}
+						}
+					},
+
+					
+
+		new GameEvent() { id = "casaquemada", prompt = "The house of our friends, the Zapata...\n\nBurnt down by those who threatened us out of our home.", options = new GameEventOption[] {
 			new GameEventOption() { description = "It's better not to look, kids, and just keep walking..." }
 		}},
 		new GameEvent() {

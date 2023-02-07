@@ -7,7 +7,8 @@ public class World : MonoBehaviour
     public GameObject[] BackgroundPrefabs;
     public GameObject[] PathPrefabs;
     public GameObject[] ForegroundPrefabs;
-    public GameObject HousePrefab;
+    public GameObject[] EventPrefabs;
+    public int[] EventPrefabWeights;
     public GameObject BurningHousePrefab;
     public GameObject River;
     public GameObject MilitiaPrefab;
@@ -123,7 +124,7 @@ public class World : MonoBehaviour
             spawnNextCounter = Random.Range(20, 30);
         }
         if (spawnNextCounter < 0 && !preventRandom && plotPrefab == null) {
-            GameObject prefab = HousePrefab;
+            GameObject prefab = EventPrefabs[WeightedPrefab.selectIndexFrom(EventPrefabWeights)];
             Instantiate(prefab, new Vector3(11, -1.18f, 1.9f), Quaternion.identity, transform);
             spawnNextCounter = Random.Range(20, 30);
         }
