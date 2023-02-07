@@ -93,12 +93,12 @@ public class TradeDialog: MonoBehaviour {
 		foreach (InventoryItem item in Expedition.i.inventory) {
 			TransferRow newRow = Instantiate(transferRowPrefab, playerRowsContainer).GetComponent<TransferRow>();
 			newRow.textfield.text = item.quantity == 1 ? item.GetName() : item.quantity + "x " + item.GetName();
-			newRow.SetTargetInventory(this, item, true, freeTransfer, targetInventory);
+			newRow.SetTargetInventory(this, item, false, freeTransfer, targetInventory);
 		}
 		foreach (InventoryItem item in targetInventory) {
 			TransferRow newRow = Instantiate(transferRowPrefab, containerRowsContainer).GetComponent<TransferRow>();
 			newRow.textfield.text = item.quantity == 1 ? item.GetName() : item.quantity + "x " + item.GetName();
-			newRow.SetTargetInventory(this, item, false, freeTransfer, Expedition.i.inventory);
+			newRow.SetTargetInventory(this, item, true, freeTransfer, Expedition.i.inventory);
 		}
 		capacityText.text = "Carrying " + Expedition.i.GetBurden() + "/" + Expedition.i.GetCarryCapacity();
 		moneyText.text = "Money " + Expedition.i.money + " pesos";
@@ -106,6 +106,7 @@ public class TradeDialog: MonoBehaviour {
 
 	public void Hide () {
 		World.i.ResumeTime();
+		Expedition.i.CleanInventory();
 		panel.SetActive(false);
 		GameUI.i.UpdateStatus();
 		if (currentID == "finca" || currentID == "dabeiba" || currentID == "uramita") {

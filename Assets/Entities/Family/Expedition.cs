@@ -24,11 +24,7 @@ public class Expedition: MonoBehaviour {
 	public float GetBurden() {
 		float acum = 0;
 		foreach (InventoryItem item in inventory) {
-			if (item.itemType == ItemType.FOOD) {
-				acum += (float) item.quantity / 10.0f;
-			} else {
-				acum += item.quantity;
-			}
+			acum += item.GetWeight() * item.quantity;
 		}
 		return acum;
 	}
@@ -46,6 +42,10 @@ public class Expedition: MonoBehaviour {
 			FamilyMember member = members[i];
 			member.HungerUpdate();
 		}
+	}
+
+	public bool CanCarry (InventoryItem item) {
+		return GetBurden() + item.GetWeight() <= GetCarryCapacity();
 	}
 
 	public void Die (FamilyMember member) {
@@ -68,10 +68,14 @@ public class Expedition: MonoBehaviour {
 			}
 			if (GetBurden() > GetCarryCapacity()) {
 				// Reduce food to min
-				GetFoodItem().quantity = (int) UnityEngine.Mathf.Floor((float)GetCarryCapacity()  * 10.0f);
+				GetFoodItem().quantity = (int) UnityEngine.Mathf.Floor((float)GetCarryCapacity() / GetFoodItem().GetWeight());
 			}
-			this.inventory = inventory.FindAll(i => i.quantity > 0 || i.itemType == ItemType.FOOD);
+			CleanInventory();
 		}
+	}
+
+	public void CleanInventory () {
+		this.inventory = inventory.FindAll(i => i.quantity > 0 || i.itemType == ItemType.FOOD);
 	}
 
 	public void CheckDeath () {

@@ -24,7 +24,7 @@ public class InventoryItem {
 
 	public int GetPrice () {
 		switch (itemType) {
-			case ItemType.FOOD: return 4;
+			case ItemType.FOOD: return 1;
 			case ItemType.MEDICINE: return 20;
 			case ItemType.BANDAGES: return 15;
 			case ItemType.MACHETE: return 20;
@@ -40,6 +40,28 @@ public class InventoryItem {
 			case ItemType.WOODEN_TOY: return 5;
 			case ItemType.SAINT: return 10;
 			case ItemType.MATCHES: return 5;
+		}
+		return 0;
+	}
+
+	public float GetWeight () {
+		switch (itemType) {
+			case ItemType.FOOD: return 0.2f;
+			case ItemType.MEDICINE: return 1f;
+			case ItemType.BANDAGES: return 1f;
+			case ItemType.MACHETE: return 2f;
+			case ItemType.CRUCIFIX: return 4f;
+			case ItemType.PAINTING: return 5f;
+			case ItemType.BIBLE: return 1f;
+			case ItemType.CLOCK: return 1f;
+			case ItemType.JEWELS: return 1f;
+			case ItemType.MIRROR: return 3f;
+			case ItemType.SHOES: return 1f;
+			case ItemType.RUANA: return 1f;
+			case ItemType.POTS: return 3f;
+			case ItemType.WOODEN_TOY: return 1f;
+			case ItemType.SAINT: return 1f;
+			case ItemType.MATCHES: return 1f;
 		}
 		return 0;
 	}
