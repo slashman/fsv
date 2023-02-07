@@ -47,8 +47,15 @@ public static class GameEvents {
 		},
 		new GameEvent() { id = "house", prompt = "Your family aproaches what seems like an abandoned house." +
 			"\nProbably another family displaced by violence." +
-			"\n You may spend some time searching for food.", options = new GameEventOption[] {
-			new GameEventOption() { description = "Let's take the risk" }
+			"\n Should we search for food, risking to be taken as thieves and attacked?", options = new GameEventOption[] {
+			new GameEventOption() { id = "steal", description = "Let's take the risk, we don't have a choice." },
+			new GameEventOption() { description = "No. Let's continue down the road." },
+		}},
+		new GameEvent() { id = "house_food", prompt = "Luckily, we found some yuca in the kitchen.", options = new GameEventOption[] {
+			new GameEventOption() { description = "Blessed be our mother the virgin." }
+		}},
+		new GameEvent() { id = "house_flee", prompt = "We are caught red-handed, and driven off the house by the machete.", options = new GameEventOption[] {
+			new GameEventOption() { description = "Have mercy! Have mercy!" }
 		}}
 	};
 
@@ -56,7 +63,23 @@ public static class GameEvents {
 		return Array.Find(events, e => e.id == id);
 	}
 
-	public static void OptionSelected (GameEvent currentEevent, GameEventOption option) {
+	public static void OptionSelected (GameEvent currentEvent, GameEventOption option) {
+		if (currentEvent.id == "house") {
+			if (option.id == "steal") {
+				int dice = UnityEngine.Random.Range(1, 4);
+				if (dice < 3) {
+					InventoryItem food = Expedition.i.inventory.Find(i => i.itemType == ItemType.FOOD);
+					food.quantity = food.quantity + UnityEngine.Random.Range(5, 8);;
+					GameUI.i.ShowEvent(GameEvents.Get("house_food"));
+				} else {
+					FamilyMember rando = Expedition.i.members[UnityEngine.Random.Range(0, Expedition.i.members.Count)];
+					rando.TakeDamage(UnityEngine.Random.Range(2, 5));
+					GameUI.i.ShowEvent(GameEvents.Get("house_flee"));
+				}
+				GameUI.i.UpdateStatus();
+				return;
+			}
+		}
 		GameUI.i.EventsDialog.Hide();
 		World.i.ResumeTime();
 	}
