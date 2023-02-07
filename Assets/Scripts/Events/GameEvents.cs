@@ -314,6 +314,7 @@ public static class GameEvents {
 			return;
 		}
 		GameUI.i.EventsDialog.Hide();
+		Expedition.i.CheckDeath();
 		World.i.ResumeTime();
 	}
 }
