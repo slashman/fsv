@@ -30,7 +30,7 @@ public class World : MonoBehaviour
 
     void Start () {
         stopTime = true;
-        spawnNextCounter = Random.Range(0, 3);
+        spawnNextCounter = Random.Range(10, 15);
         currentTime = new System.DateTime(1952, 04, 12);
         GameUI.i.UpdateDate(currentTime);
         GameUI.i.UpdateStatus();
@@ -85,29 +85,44 @@ public class World : MonoBehaviour
         // Check based on progress
         float progress = Expedition.i.Progress;
         // 280 victory
-        if (progress > 20 && progress < 49 && !burningHouseGenerated) {
-            plotPrefab = BurningHousePrefab;
-            burningHouseGenerated = true;
-        } else if (progress > 105 && progress < 135 && !riverGenerated) {
-            plotPrefab = River;
-            riverGenerated = true;
-        }
-
-
-        if (progress > 50 && progress < 70 && !dabeibaGenerated) {
-            plotPrefab = DabeibaPrefab;
-            dabeibaGenerated = true;
-        } else if (progress > 100 && progress < 120 && !militiaGenerated) {
-            plotPrefab = MilitiaPrefab;
-            militiaGenerated = true;
-        } else if (progress > 160 && progress < 180 && !uramitaGenerated) {
-            plotPrefab = UramitaPrefab;
-            uramitaGenerated = true;
+        bool preventRandom = false;
+        int randomProgressMargin = 10;
+        if (progress > 20 && !burningHouseGenerated) {
+            preventRandom = true;
+            if (progress > 20 + randomProgressMargin) {
+                plotPrefab = BurningHousePrefab;
+                burningHouseGenerated = true;
+            }
+        } else if (progress > 50 && !dabeibaGenerated) {
+            preventRandom = true;
+            if (progress > 50 + randomProgressMargin) {
+                plotPrefab = DabeibaPrefab;
+                dabeibaGenerated = true;
+            }
+        } else if (progress > 100 && !militiaGenerated) {
+            preventRandom = true;
+            if (progress > 100 + randomProgressMargin) {
+                plotPrefab = MilitiaPrefab;
+                militiaGenerated = true;
+            }
+        } else if (progress > 105 && !riverGenerated) {
+            preventRandom = true;
+            if (progress > 105 + randomProgressMargin) {
+                plotPrefab = River;
+                riverGenerated = true;
+            }
+        } else if (progress > 160 && !uramitaGenerated) {
+            preventRandom = true;
+            if (progress > 160 + randomProgressMargin) {
+                plotPrefab = UramitaPrefab;
+                uramitaGenerated = true;
+            }
         }
         if (plotPrefab != null) {
             Instantiate(plotPrefab, new Vector3(10, -1.18f, 1.9f), Quaternion.identity, transform);
+            spawnNextCounter = Random.Range(20, 30);
         }
-        if (spawnNextCounter < 0 && plotPrefab == null) {
+        if (spawnNextCounter < 0 && !preventRandom && plotPrefab == null) {
             GameObject prefab = HousePrefab;
             Instantiate(prefab, new Vector3(11, -1.18f, 1.9f), Quaternion.identity, transform);
             spawnNextCounter = Random.Range(20, 30);
