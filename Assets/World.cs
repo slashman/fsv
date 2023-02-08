@@ -31,7 +31,7 @@ public class World : MonoBehaviour
 
     void Start () {
         stopTime = true;
-        spawnNextCounter = Random.Range(10, 15);
+        spawnNextCounter = Random.Range(5, 10);
         currentTime = new System.DateTime(1952, 04, 12);
         GameUI.i.UpdateDate(currentTime);
         GameUI.i.UpdateStatus();
