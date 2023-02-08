@@ -17,7 +17,7 @@ public class TransferRow: MonoBehaviour {
 		this.toFamily = toFamily;
 		this.item = item;
 		this.targetInventory = targetInventory;
-		buttonLabel.text = freeTransfer ? "Transfer" : toFamily ? "Buy" : "Sell";
+		buttonLabel.text = freeTransfer ? toFamily ? "Take" : "Leave" : toFamily ? "Buy" : "Sell";
 		this.freeTransfer = freeTransfer;
 	}
 
