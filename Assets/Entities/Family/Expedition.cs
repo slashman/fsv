@@ -8,6 +8,8 @@ public class Expedition: MonoBehaviour {
 	public float Progress;
 	public int money;
 
+	public bool HungerNotice = false;
+
 	void Awake () {
 		Expedition.i = this;
 		Expedition.i.inventory = new List<InventoryItem>() {

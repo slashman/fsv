@@ -301,6 +301,9 @@ public static class GameEvents {
 		}},
 		new GameEvent() { id = "house_flee", prompt = "We are caught red-handed, and driven off the house by the machete.", options = new GameEventOption[] {
 			new GameEventOption() { description = "Have mercy! Have mercy!" }
+		}},
+		new GameEvent() { id = "hunger", prompt = "XXX hasn't eaten in days and is now weaker!\n\nYou can feed your family members by clicking on their picture in the status bar on the right.\n\nIf you fail to do this for several days, they will abandon this world.", options = new GameEventOption[] {
+			new GameEventOption() { description = "I will take care of them!" }
 		}}
 	};
 

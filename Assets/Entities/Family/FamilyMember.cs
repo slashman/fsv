@@ -87,6 +87,11 @@ public class FamilyMember: MonoBehaviour {
 		if (Hunger > 2) {
 			Hunger = 2;
 			TakeDamage(UnityEngine.Random.Range(1, 2));
+			if (!Expedition.i.HungerNotice && isHuman) {
+				GameUI.i.ShowPersonEvent(GameEvents.Get("hunger"), memberName);
+				Expedition.i.HungerNotice = true;
+				World.i.StopTime();
+			}
 		}
 		GameUI.i.UpdateStatus();
 		UpdateBox();
