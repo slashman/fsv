@@ -244,13 +244,6 @@ public static class GameEvents {
 			new GameEventOption() { description = "It's better not to look, kids, and just keep walking..." }
 		}},
 		new GameEvent() {
-			id = "stolenAnimal",
-			prompt = "After a good night’s sleep, you notice XXX is missing. After spending several hours looking for it, you decide it’s time to move on.",
-			options = new GameEventOption[] {
-				new GameEventOption() { description = "I should have been more careful." }
-			}
-		},
-		new GameEvent() {
 			id = "cart",
 			prompt = "Ahead on the road you see what appears to be a cart. It has some food inside it that seems edible. The surrounding soil is covered by blood. There are no mules or horses, and no one answer your calls.",
 			options = new GameEventOption[] {
@@ -283,8 +276,8 @@ public static class GameEvents {
 		new GameEvent() {
 			id = "finca2",
 			prompt = "There was a time when you’d visit the family who lived here." +
-			"\nBack then, you could trust your neighbors. You felt safe." +
-			"\nNow, you’re afraid to ask for help. What if they think you are part of the Chulavitas?",
+			"\n\nBack then, you could trust your neighbors. You felt safe." +
+			"\n\nNow, you’re afraid to ask for help. What if they think you are part of the Chulavitas?",
 			options = new GameEventOption[] {
 				new GameEventOption() { description = "People have been shot for far less..." }
 			}
