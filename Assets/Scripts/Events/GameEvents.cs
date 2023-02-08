@@ -254,8 +254,22 @@ public static class GameEvents {
 			id = "cart",
 			prompt = "Ahead on the road you see what appears to be a cart. It has some food inside it that seems edible. The surrounding soil is covered by blood. There are no mules or horses, and no one answer your calls.",
 			options = new GameEventOption[] {
-				new GameEventOption() { description = "Load Rosita with all the food. [+20 food]" },
-				new GameEventOption() { description = "Leave some food behind. Someone else may need it. [+10 food]" }
+				new GameEventOption() { description = "Grab all the food. [+20 food]", action = () => {
+					InventoryItem food = Expedition.i.inventory.Find(i => i.itemType == ItemType.FOOD);
+					food.quantity = food.quantity + 20;
+					GameUI.i.UpdateStatus();
+					GameUI.i.EventsDialog.Hide();
+					Expedition.i.CheckDeath();
+					World.i.ResumeTime();
+				} },
+				new GameEventOption() { description = "Leave some food behind. Someone else may need it. [+10 food]" , action = () => {
+					InventoryItem food = Expedition.i.inventory.Find(i => i.itemType == ItemType.FOOD);
+					food.quantity = food.quantity + 10;
+					GameUI.i.UpdateStatus();
+					GameUI.i.EventsDialog.Hide();
+					Expedition.i.CheckDeath();
+					World.i.ResumeTime();
+				} }
 			}
 		},
 		new GameEvent() {
