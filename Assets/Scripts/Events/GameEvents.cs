@@ -143,6 +143,7 @@ public static class GameEvents {
 								} else {
 									GameUI.i.ShowEvent(GameEvents.Get("countryHouse_2"));
 									Expedition.i.Heal();
+									Expedition.i.Fill();
 									GameUI.i.UpdateStatus();
 								}
 							}
@@ -260,7 +261,7 @@ public static class GameEvents {
 		new GameEvent() {
 			id = "rioMelcocho",
 			prompt = "Years ago, when looking at the crystalline waters of this river, at its colors, you’d think there can only exist peace." +
-			"\nNowadays however, you only think how easily your family will get shot if you stop here.",
+			"\n\nNowadays however, you only think how easily your family will get shot if you stop here.",
 			options = new GameEventOption[] {
 				new GameEventOption() { description = "Don't stop now! We must go!" }
 			}

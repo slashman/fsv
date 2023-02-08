@@ -134,6 +134,14 @@ public class Expedition: MonoBehaviour {
 	public void Heal () {
 		foreach (FamilyMember familyMember in members) {
 			familyMember.Heal();
+			familyMember.UpdateBox();
+		}
+	}
+
+	public void Fill () {
+		foreach (FamilyMember familyMember in members) {
+			familyMember.Hunger = 0;
+			familyMember.UpdateBox();
 		}
 	}
 
