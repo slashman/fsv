@@ -463,6 +463,7 @@ GameObject:
   - component: {fileID: 7049773137505981986}
   - component: {fileID: 1349179515654397490}
   - component: {fileID: 5174718583052129916}
+  - component: {fileID: 8418423610464959015}
   m_Layer: 5
   m_Name: HPLabel
   m_TagString: Untagged
@@ -518,7 +519,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Health:'
+  m_text: hud.health
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfdb45942c7d4924aab12a0982a052c7, type: 2}
   m_sharedMaterial: {fileID: -8302484820921850185, guid: dfdb45942c7d4924aab12a0982a052c7, type: 2}
@@ -587,6 +588,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8418423610464959015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8018851714686799994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3840686f95678874ea6fae09ad1ce4de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8149051620665425296
 GameObject:
   m_ObjectHideFlags: 0

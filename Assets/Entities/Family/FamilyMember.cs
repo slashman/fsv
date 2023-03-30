@@ -37,9 +37,9 @@ public class FamilyMember: MonoBehaviour {
 			case 0:
 				return "";
 			case 1:
-				return "Hungry";
+				return Loc.Localize("status.hungry");
 			case 2:
-				return "Starving";
+				return Loc.Localize("status.starving");
 		}
 		return "";
 	}

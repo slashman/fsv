@@ -30,11 +30,11 @@ public class EventsDialog : MonoBehaviour {
         }
         for (int i = 0; i < e.options.Length; i++) {
             Buttons[i].SetActive(true);
-            Buttons[i].GetComponentInChildren<TMP_Text>().text = e.options[i].description;
+            Buttons[i].GetComponentInChildren<TMP_Text>().text = Loc.Localize(e.id+"."+(i+1));
         }
-        PromptText.text = e.prompt;
+        PromptText.text = Loc.Localize(e.id + ".prompt");
         if (memberName != null) {
-            PromptText.text = e.prompt.Replace("XXX", memberName);
+            PromptText.text = PromptText.text.Replace("XXX", memberName);
         }
     }
 

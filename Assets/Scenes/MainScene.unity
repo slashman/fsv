@@ -651,6 +651,7 @@ GameObject:
   - component: {fileID: 994706488}
   - component: {fileID: 994706490}
   - component: {fileID: 994706489}
+  - component: {fileID: 994706491}
   m_Layer: 5
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
@@ -698,15 +699,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Welcome to the big city.
-
-
-    This is just the beginning, many hardships
-    still await for you.
-
-
-    Hopefully all the sacrifices made along the way will
-    be worth this new life.'
+  m_text: victory.text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfdb45942c7d4924aab12a0982a052c7, type: 2}
   m_sharedMaterial: {fileID: -8302484820921850185, guid: dfdb45942c7d4924aab12a0982a052c7, type: 2}
@@ -783,6 +776,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994706487}
   m_CullTransparentMesh: 1
+--- !u!114 &994706491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994706487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3840686f95678874ea6fae09ad1ce4de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1072882279
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,6 +799,7 @@ GameObject:
   - component: {fileID: 1072882280}
   - component: {fileID: 1072882282}
   - component: {fileID: 1072882281}
+  - component: {fileID: 1072882283}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -918,6 +924,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072882279}
   m_CullTransparentMesh: 1
+--- !u!114 &1072882283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072882279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3840686f95678874ea6fae09ad1ce4de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1078246122
 GameObject:
   m_ObjectHideFlags: 0

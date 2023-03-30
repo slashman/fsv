@@ -18,8 +18,8 @@ public class InventoryDialog: MonoBehaviour {
 			TableRow newRow = Instantiate(rowPrefab, rowsContainer).GetComponent<TableRow>();
 			newRow.textfield.text = item.quantity == 1 ? item.GetName() : item.quantity + "x " + item.GetName();
 		}
-		capacityText.text = "Carrying " + Expedition.i.GetBurden() + "/" + Expedition.i.GetCarryCapacity();
-		moneyText.text = "Money " + Expedition.i.money + " pesos";
+		capacityText.text = Loc.Localize("inventory.carrying", Expedition.i.GetBurden(), Expedition.i.GetCarryCapacity()) ;
+		moneyText.text = Loc.Localize("inventory.money", Expedition.i.money);
 		if (panel.activeInHierarchy == false)
 		{	GetComponent<AudioSource>().PlayOneShot(openSFX);
 			panel.SetActive(true);

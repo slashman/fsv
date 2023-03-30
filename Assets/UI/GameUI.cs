@@ -30,7 +30,10 @@ public class GameUI : MonoBehaviour
     }
 
     public void UpdateDate(System.DateTime date) {
-        DateText.text = date.ToString("dddd, MMMM dd, yyyy");
+        string formattedDate = date.ToString("dddd, MMMM dd, yyyy", Loc.CurrentCulture);
+        formattedDate = (formattedDate[0] + "").ToUpper() + formattedDate.Substring(1);
+        DateText.text = formattedDate;
+        
     }
 
     public void UpdateStatus () {

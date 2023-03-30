@@ -100,8 +100,8 @@ public class TradeDialog: MonoBehaviour {
 			newRow.textfield.text = item.quantity == 1 ? item.GetName() : item.quantity + "x " + item.GetName();
 			newRow.SetTargetInventory(this, item, true, freeTransfer, Expedition.i.inventory);
 		}
-		capacityText.text = "Carrying " + Expedition.i.GetBurden() + "/" + Expedition.i.GetCarryCapacity();
-		moneyText.text = "Money " + Expedition.i.money + " pesos";
+		capacityText.text = Loc.Localize("inventory.carrying", Expedition.i.GetBurden(), Expedition.i.GetCarryCapacity()) ;
+		moneyText.text = Loc.Localize("inventory.money", Expedition.i.money);
 	}
 
 	public void Hide () {
