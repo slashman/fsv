@@ -9,3 +9,4 @@ Path
 	8 y 9 Objetos
 Foreground: 11
 Fixed Foreground: 10
+ 
