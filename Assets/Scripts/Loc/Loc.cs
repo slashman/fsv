@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using System.IO;
 
 public enum Language {
@@ -19,7 +20,7 @@ public class LocalizationItem {
 	public string value;
 }
 
-public static class Loc
+public class Loc: MonoBehaviour
 {
 	private static Dictionary<string, string> dictionary;
 	private static string textNotFound = "Localized text not found";
@@ -28,38 +29,58 @@ public static class Loc
 
 	public static System.Globalization.CultureInfo CurrentCulture;
 
-	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-	public static void LoadLanguageFirst() {
-		LoadLanguage("spanish");
+	public static Loc i;
+
+	public delegate void LanguageLoaded ();
+	public LanguageLoaded OnLanguageLoaded;
+
+	void Start() {
+		Loc.i = this;
 	}
 
-	public static void LoadLanguage (string language) {
+	public void LoadLanguage (string language, LanguageLoaded onLanguageLoaded) {
+		this.OnLanguageLoaded = onLanguageLoaded;
 		dictionary = new Dictionary<string, string>();
 		Path.Combine(Application.streamingAssetsPath, "Localization/" + language + ".json");
 		LoadFile("Localization/" + language + ".json");
-		Loc.CurrentCulture = new System.Globalization.CultureInfo(Loc.Localize("culture"));
 	}
 
-	private static void LoadFile(string filename) {
+	private void LoadFile(string filename) {
 		string pathName = Path.Combine(Application.streamingAssetsPath, filename);
 		if (File.Exists(pathName)) {
 			string dataAsJson = File.ReadAllText(pathName);
-			LocalizationData loadedData = JsonUtility.FromJson<LocalizationData>(dataAsJson);
-
-			for (int i = 0; i < loadedData.items.Length; i++) {
-				try {
-					string value = loadedData.items[i].value;
-					value = value.Replace("$NL", "\n");
-					dictionary.Add(loadedData.items[i].key, value);
-				} catch (System.ArgumentException ae) {
-					Debug.LogError("Duplicate Key [" + loadedData.items[i].key + "].");
-				}
-			}
-
-			isReady = true;
+			LoadDictionary(dataAsJson);
 		} else {
-			Debug.LogError("File [" + pathName + "] not found.");
+			// We are very likely running on Android or WEBGL, so attempt to fetch it
+			StartCoroutine(FetchFile(pathName));
 		}
+	}
+
+	private IEnumerator FetchFile(string path) {
+		UnityWebRequest unityWebRequest = UnityWebRequest.Get(path);
+		yield return unityWebRequest.Send();
+		if (unityWebRequest.isDone) {
+			LoadDictionary(unityWebRequest.downloadHandler.text);
+		}
+	}
+
+	private void LoadDictionary(string dataAsJson) {
+		LocalizationData loadedData = JsonUtility.FromJson<LocalizationData>(dataAsJson);
+		for (int i = 0; i < loadedData.items.Length; i++) {
+			try {
+				string value = loadedData.items[i].value;
+				value = value.Replace("$NL", "\n");
+				dictionary.Add(loadedData.items[i].key, value);
+			} catch (System.ArgumentException ae) {
+				Debug.LogError("Duplicate Key [" + loadedData.items[i].key + "].");
+			}
+		}
+		isReady = true;
+		Loc.CurrentCulture = new System.Globalization.CultureInfo(Loc.Localize("culture"));
+		if (OnLanguageLoaded != null) {
+			OnLanguageLoaded();
+		}
+		LocalizedText.RelocalizeAll();
 	}
 
 	public static bool HasKey(string key) {

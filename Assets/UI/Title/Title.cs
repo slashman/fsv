@@ -20,11 +20,11 @@ public class Title: MonoBehaviour {
 	}
 
 	private void SelectLanguage (string language) {
-		MainUI.SetActive(true);
-		Loc.LoadLanguage(language);
-		State = 1;
-		LanguageSelection.SetActive(false);
-		LocalizedText.RelocalizeAll();
+		Loc.i.LoadLanguage(language, () => {
+			MainUI.SetActive(true);
+			State = 1;
+			LanguageSelection.SetActive(false);
+		});
 	}
 
 	public void ClickToStart () {
