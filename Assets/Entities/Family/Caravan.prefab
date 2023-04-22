@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 5
+  Hunger: 0
   BaseCarryCapacity: 1
   statusBox: {fileID: 0}
   isHuman: 1
@@ -106,7 +107,7 @@ MonoBehaviour:
   memberName: Clara
 --- !u!95 &1286744084505097118
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -123,7 +124,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &60335427261180303
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,14 +224,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 8
-  BaseCarryCapacity: 3
+  Hunger: 0
+  BaseCarryCapacity: 5
   statusBox: {fileID: 0}
   isHuman: 1
   isAdult: 0
   memberName: Maria
 --- !u!95 &3933269739329295413
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -247,7 +249,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &196397815652830457
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,14 +349,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 10
-  BaseCarryCapacity: 4
+  Hunger: 0
+  BaseCarryCapacity: 5
   statusBox: {fileID: 0}
   isHuman: 1
   isAdult: 1
   memberName: Manuel
 --- !u!95 &7591713394027949421
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -371,7 +374,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &199650903343080811
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,14 +474,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 14
-  BaseCarryCapacity: 7
+  Hunger: 0
+  BaseCarryCapacity: 10
   statusBox: {fileID: 0}
   isHuman: 0
   isAdult: 0
   memberName: Rosita
 --- !u!95 &2034105814741076485
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -495,7 +499,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &738742825020000199
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +614,7 @@ MonoBehaviour:
   - {fileID: 2989793293641463708}
   Progress: 0
   money: 5
+  HungerNotice: 0
 --- !u!1 &2052164900101529202
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,14 +714,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 14
-  BaseCarryCapacity: 2
+  Hunger: 0
+  BaseCarryCapacity: 4
   statusBox: {fileID: 0}
   isHuman: 1
   isAdult: 1
   memberName: Esperanza
 --- !u!95 &1991882395341743399
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -733,7 +739,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &4956228974819559832
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,14 +839,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 10
-  BaseCarryCapacity: 4
+  Hunger: 0
+  BaseCarryCapacity: 6
   statusBox: {fileID: 0}
   isHuman: 1
   isAdult: 1
   memberName: Tiberio
 --- !u!95 &464681234696723256
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -857,7 +864,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &5046902025398296152
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,6 +966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 10
+  Hunger: 0
   BaseCarryCapacity: 0
   statusBox: {fileID: 0}
   isHuman: 0
@@ -1082,7 +1090,7 @@ AudioSource:
     m_RotationOrder: 4
 --- !u!95 &3304672392725688763
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1099,4 +1107,4 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
