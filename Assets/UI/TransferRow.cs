@@ -31,14 +31,18 @@ public class TransferRow: MonoBehaviour {
 				return;
 			}
 		}
+		int itemPrice = this.item.GetPrice();
+		if (this.item.itemType != ItemType.FOOD) {
+			itemPrice = itemPrice * parent.economyModifier;
+		}
 		if (!freeTransfer) {
 			if (toFamily) {
-				if (Expedition.i.money < this.item.GetPrice()) {
+				if (Expedition.i.money < itemPrice) {
 					return;
 				}
-				Expedition.i.money -= this.item.GetPrice();
+				Expedition.i.money -= itemPrice;
 			} else {
-				Expedition.i.money += this.item.GetPrice();
+				Expedition.i.money += itemPrice;
 			}
 		}
 			

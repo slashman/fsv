@@ -54,7 +54,7 @@ public class TradeDialog: MonoBehaviour {
 			}
 		}
 	};
-
+	public int economyModifier;
 	private List<InventoryItem> targetInventory;
 
 	public static string getInventoryName (string id) {
@@ -73,6 +73,7 @@ public class TradeDialog: MonoBehaviour {
 		currentID = targetInventoryId;
 		this.targetInventory = INVENTORIES[targetInventoryId];
 		targetNameText.text = getInventoryName(targetInventoryId);
+		this.economyModifier = targetInventoryId == "uramita" ? 2 : 1;
 		freeTransfer = targetInventoryId == "finca";
 		if (currentID == "finca" || currentID == "dabeiba" || currentID == "uramita") {
 			GetComponent<AudioSource>().PlayOneShot(openDoorSFX);	
