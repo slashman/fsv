@@ -91,7 +91,7 @@ public class Expedition: MonoBehaviour {
 		}
 		if (!foundHuman) {
 			World.i.StopTime();
-			GameUI.i.ShowGameOver("You didn't make it to the city\n\nBetter luck next life.");
+			GameUI.i.ShowGameOver(Loc.Localize("gameover.text"));
 		}
 	}
 
