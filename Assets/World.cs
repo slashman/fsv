@@ -22,6 +22,7 @@ public class World : MonoBehaviour
     private float spawnPathCounter;
     private float spawnNextCounter;
     public bool stopTime;
+    public bool IsGameOver;
 
     public System.DateTime currentTime;
 

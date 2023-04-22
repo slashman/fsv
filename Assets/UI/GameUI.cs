@@ -41,7 +41,7 @@ public class GameUI : MonoBehaviour
     }
 
     public void ShowGameOver (string gameOverDescription) {
-
+        World.i.IsGameOver = true;
         GameOverPanel.Show(gameOverDescription);
     }
 

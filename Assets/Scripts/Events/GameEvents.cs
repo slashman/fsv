@@ -210,7 +210,9 @@ public static class GameEvents {
 					GameUI.i.UpdateStatus();
 					GameUI.i.EventsDialog.Hide();
 					Expedition.i.CheckDeath();
-					World.i.ResumeTime();
+					if (!World.i.IsGameOver) {
+						World.i.ResumeTime();
+					}
 				} },
 				new GameEventOption() { action = () => {
 					InventoryItem food = Expedition.i.inventory.Find(i => i.itemType == ItemType.FOOD);
@@ -218,7 +220,9 @@ public static class GameEvents {
 					GameUI.i.UpdateStatus();
 					GameUI.i.EventsDialog.Hide();
 					Expedition.i.CheckDeath();
-					World.i.ResumeTime();
+					if (!World.i.IsGameOver) {
+						World.i.ResumeTime();
+					}
 				} }
 			}
 		},
@@ -275,6 +279,8 @@ public static class GameEvents {
 		}
 		GameUI.i.EventsDialog.Hide();
 		Expedition.i.CheckDeath();
-		World.i.ResumeTime();
+		if (!World.i.IsGameOver) {
+			World.i.ResumeTime();
+		}
 	}
 }
