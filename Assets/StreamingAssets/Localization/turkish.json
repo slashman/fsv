@@ -66,7 +66,7 @@
 		{"key": "title.credits", "value": "An entry for Global Game Jam 2023\n\n\nMusic: Camilo Fique\nIllustration: Oscar Creart\nNarrative Design: Esteban Martínez\nSound Effects and Audio: Juan García\nDesign, Code, Production: Santiago Zapata"},
 		{"key": "intro.text", "value": "Bu, güzel, sevilen topraklarından kaçan bir ailenin çetin yolculuğunun hikayesidir. Kolombiya'daki birçok ailenin kökeninde buna benzer hikayeler yatıyor.\n\nİki nesil önce, binlerce insan, kırsal kesimdeki evlerini terk etmeye ve şehirlerin görece güvenliğini aramaya zorlandı, daha sonradan \"La Violencia\", diye adlandırıldı. iki partiden de nefretin o kadar yüksek olduğu, masum insanların sırf şüphe için ya da şanslıysa işkence gördüğü ve öldürüldüğü bir zaman; evlerini terk etmek zorunda.\n\n\n\nDevam etmek için tıklayın."},
 		{"key": "hud.food", "value": "Yemek:"},
-		{"key": "culture", "value": "en"},
+		{"key": "culture", "value": "tr"},
 		{"key": "hud.health", "value": "Can:"},
 		{"key": "status.hungry", "value": "Aç"},
 		{"key": "status.starving", "value": "Açlıktan Ölüyor"},
