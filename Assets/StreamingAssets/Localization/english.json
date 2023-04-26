@@ -36,7 +36,7 @@
 		{"key": "bandits.2", "value": "Fight!"},
 		{"key": "bandits_1.prompt", "value": "The bandoleros run to grab the items. They are also famished, maybe ran out of their homes too. Using this opportunity, you and your family flee."},
 		{"key": "bandits_1.1", "value": "Ok"},
-		{"key": "bandits_2.prompt", "value": "XXX will have to heal minor wounds, but you’ll retain your family’s positions."},
+		{"key": "bandits_2.prompt", "value": "XXX will have to heal minor wounds, but you’ll retain your family’s posessions."},
 		{"key": "bandits_2.1", "value": "Ok"},
 		{"key": "bandits_3.prompt", "value": "You black out. Your family seems scared but safe. The bandoleros were scared and in a hurry so they only stole some items."},
 		{"key": "bandits_3.1", "value": "Ok"},
