@@ -45,7 +45,7 @@ public class FamilyMember: MonoBehaviour {
 	}
 
 	public void UpdateBox () {
-		statusBox.HPText.text = this.HP.ToString();
+		statusBox.HPText.text = Loc.Localize("hud.health") + " " + this.HP.ToString();
 		statusBox.HungerText.text = GetHungerDescription();
 		if (Hunger > 1) {
 			statusBox.HungerText.color = new Color32(254,0,0,255);
