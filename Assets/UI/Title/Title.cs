@@ -23,6 +23,10 @@ public class Title: MonoBehaviour {
 		SelectLanguage("turkish");
 	}
 
+	public void SelectGerman () {
+		SelectLanguage("german");
+	}
+
 	private void SelectLanguage (string language) {
 		Loc.i.LoadLanguage(language, () => {
 			MainUI.SetActive(true);
