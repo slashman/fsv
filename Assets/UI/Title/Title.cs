@@ -27,6 +27,10 @@ public class Title: MonoBehaviour {
 		SelectLanguage("german");
 	}
 
+	public void SelectCatalan () {
+		SelectLanguage("catalan");
+	}
+
 	private void SelectLanguage (string language) {
 		Loc.i.LoadLanguage(language, () => {
 			MainUI.SetActive(true);
